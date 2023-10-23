@@ -1,1 +1,0 @@
-#Explication of the software
