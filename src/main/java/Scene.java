@@ -1,3 +1,5 @@
+import main.java.SceneObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
