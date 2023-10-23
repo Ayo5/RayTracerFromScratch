@@ -33,7 +33,7 @@ public class TripletTest {
         Triplet t1 = new Triplet(1, 2, 3);
         Triplet t2 = new Triplet(4, 5, 6);
         double result = t1.dotScalar(t2);
-        assertEquals(32.0, result, 0.001); // Using delta for double comparison
+        assertEquals(32.0, result, 0.001);
     }
 
     @Test
