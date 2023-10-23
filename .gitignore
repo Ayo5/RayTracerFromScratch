@@ -2,8 +2,12 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+<<<<<<< .gitignore
 .idea/workspace.xml
 <<<<<<< HEAD
+=======
+.idea/
+>>>>>>> .gitignore
 
 =======
 >>>>>>> 74711491b46c587ddffd5d704d8c3d50b42f3ad7
@@ -129,4 +133,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
