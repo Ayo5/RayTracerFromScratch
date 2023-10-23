@@ -1,7 +1,5 @@
 package main.java;
 
-import main.java.Material;
-
 public abstract class SceneObject {
     private Material material;
 

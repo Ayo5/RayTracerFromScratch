@@ -12,6 +12,4 @@ public class Material {
         this.reflectivity = reflectivity;
         this.shininess = shininess;
     }
-
-    // Getters and setters for material properties
 }
