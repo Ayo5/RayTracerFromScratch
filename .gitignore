@@ -3,7 +3,10 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .idea/workspace.xml
+<<<<<<< HEAD
 
+=======
+>>>>>>> 74711491b46c587ddffd5d704d8c3d50b42f3ad7
 
 ### Eclipse ###
 .apt_generated

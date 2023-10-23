@@ -23,37 +23,27 @@ public class RayTracer {
     }
 
     public void render() {
-        // Create a scene
-        Scene scene = createScene();
+        // Calculez la largeur et la hauteur des pixels en fonction du champ de vision et de la taille de l'image
+        double pixelWidth = 2.0 * Math.tan(Math.toRadians(fov / 2.0)) / imgWidth;
+        double pixelHeight = 2.0 * Math.tan(Math.toRadians(fov / 2.0)) / imgHeight;
 
-        // Eye position (lookFrom)
-        Vector lookFrom = new Vector(0, 0, 0); // Replace with your camera/eye position
-
-        // Convert the field of view from degrees to radians
-        double fovr = Math.toRadians(fov);
-
-        // Calculate the dimensions of a pixel in the (u, v, w) coordinate system
-        double pixelHeight = Math.tan(fovr / 2);
-        double pixelWidth = pixelHeight * (imgWidth / (double) imgHeight);
-
-        // Iterate through each pixel of the image
+        // Parcourez tous les pixels de l'image
         for (int i = 0; i < imgWidth; i++) {
             for (int j = 0; j < imgHeight; j++) {
-                // Calculate the direction vector ⃗d from the eye (lookFrom) to pixel (i, j)
-                Vector d = calculateDirectionVector(lookFrom, i, j, pixelWidth, pixelHeight);
 
-                // Find the nearest intersection with an object in the scene
-                Intersection intersection = scene.findNearestIntersection(lookFrom, d);
+                // Calculez le vecteur direction ⃗d
+                Vector direction = scene.getCamera().calculateDirectionVector(i, j, pixelWidth, pixelHeight);
 
+                // Créez un rayon à partir de la position de la caméra et de la direction calculée
+                Ray ray = new Ray(scene.getCamera().getPosition(), direction);
+
+                // Calculez l'intersection entre le rayon et les objets de la scène
+                Intersection intersection = scene.calculateIntersection(ray);
+
+                // Si le rayon a touché un objet, calculez la couleur du pixel
                 if (intersection != null) {
-                    // If an intersection is found, calculate the color of the object hit
-                    Color pixelColor = calculateColor(intersection.getObject(), intersection.getPoint());
-
-                    // Paint the pixel (i, j) with the appropriate color in the image
-                    image.setRGB(i, j, pixelColor.toRGB());
-                } else {
-                    // No intersection, paint the pixel black
-                    image.setRGB(i, j, Color.BLACK.toRGB());
+                    Vector color = calculateColor(intersection, ray);
+                    image.setRGB(i, j, color.toRGB());
                 }
             }
         }

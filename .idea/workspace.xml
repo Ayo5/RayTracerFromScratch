@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6cecf0d5-05b8-4a49-bb57-677d91a4ccc1" name="Changes" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sae_s3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sae_s3.iml" afterDir="false" />
@@ -16,6 +17,11 @@
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sae_s3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sae_s3.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Triplet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Triplet.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/Sphere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SphereTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 74711491b46c587ddffd5d704d8c3d50b42f3ad7
       <change beforePath="$PROJECT_DIR$/src/test/java/TripletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TripletTest.java" afterDir="false" />
 >>>>>>> 460a15d4bbe36362c1fe352418a89a9ca8ee622f
 =======
@@ -29,6 +35,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -36,6 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -89,6 +97,25 @@
   }
 }</component>
   <component name="RunManager" selected="JUnit.PointTest">
+=======
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="test.java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.VectorTest">
+>>>>>>> 74711491b46c587ddffd5d704d8c3d50b42f3ad7
     <configuration name="ColorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sae_s3" />
       <extension name="coverage">
@@ -104,6 +131,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="ColorTest.testColorSchurProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sae_s3" />
       <extension name="coverage">
@@ -120,6 +148,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+=======
+>>>>>>> 74711491b46c587ddffd5d704d8c3d50b42f3ad7
     <configuration name="PointTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sae_s3" />
       <extension name="coverage">
@@ -152,15 +182,21 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="JUnit.PointTest" />
         <item itemvalue="JUnit.ColorTest.testColorSchurProduct" />
         <item itemvalue="JUnit.ColorTest" />
         <item itemvalue="JUnit.VectorTest" />
+=======
+        <item itemvalue="JUnit.VectorTest" />
+        <item itemvalue="JUnit.PointTest" />
+        <item itemvalue="JUnit.ColorTest" />
+>>>>>>> 74711491b46c587ddffd5d704d8c3d50b42f3ad7
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+<<<<<<< HEAD
     <task active="true" id="Default" summary="Default task">
       <changelist id="6cecf0d5-05b8-4a49-bb57-677d91a4ccc1" name="Changes" comment="" />
       <created>1698045629585</created>
@@ -174,6 +210,8 @@
       <workItem from="1698057582912" duration="2214000" />
 >>>>>>> 16491a88243a1490bb7a00607ca20a3496166042
     </task>
+=======
+>>>>>>> 74711491b46c587ddffd5d704d8c3d50b42f3ad7
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
