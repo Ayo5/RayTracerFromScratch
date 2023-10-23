@@ -31,4 +31,7 @@ public class Color {
         return new Color(triplet.getX() * other.getR(), triplet.getY() * other.getG(), triplet.getZ() * other.getB());
     }
 
+    public boolean isBlack() {
+        return triplet.getX() == 0.0 && triplet.getY() == 0.0 && triplet.getZ() == 0.0;
+    }
 }

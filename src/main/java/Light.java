@@ -1,5 +1,8 @@
 package main.java;
+<<<<<<< HEAD
 
+=======
+>>>>>>> ecd4e5def82c0f752933cad18b8d364303b198c8
 import java.io.*;
 
 public class Light {
@@ -46,3 +49,7 @@ public class Light {
         }
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ecd4e5def82c0f752933cad18b8d364303b198c8
