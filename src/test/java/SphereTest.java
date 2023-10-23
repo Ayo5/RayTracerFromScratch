@@ -16,6 +16,6 @@ public class SphereTest {
         } else {
             System.out.println("Centre de la sphère non défini.");
         }
-        System.out.println("Rayon de la sphère : " + radius);
+        System.out.println("Rayon de la sphère : " + radius );
             }
 }

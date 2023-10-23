@@ -1,5 +1,7 @@
 package main.java;
 
+import main.java.Point;
+
 import java.io.*;
 
 public class Sphere {
@@ -7,33 +9,36 @@ public class Sphere {
     private Point centre;
     private double radius;
 
+    public Sphere() {
+        this.centre = null;
+        this.radius = 0;
+    }
+
     public void settingFromFile(String fileName) {
         try {
-
             File file = new File("src/main/ressource/" + fileName);
-            BufferedReader br = new BufferedReader(new InputStreamReader(file.toURI().toURL().openStream()));
-            String line = br.readLine();
-            if (line != null) {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            while ((line = br.readLine()) != null) {
                 String[] words = line.split("\\s+");
-                if (words[0].equals("sphere")) {
-                    try {
-                        double x = Double.parseDouble(words[1]);
-                        double y = Double.parseDouble(words[2]);
-                        double z = Double.parseDouble(words[3]);
-                        double r = Double.parseDouble(words[4]);
-                        centre = new Point(x, y, z);
-                        radius = r;
-                    } catch (NumberFormatException e) {
-                        System.out.println("Format de nombre invalide dans la ligne de la sphère.");
+                if (words.length > 0) {
+                    String keyword = words[0];
+                    if (keyword.equals("sphere")) {
+                        try {
+                            double x = Double.parseDouble(words[1]);
+                            double y = Double.parseDouble(words[2]);
+                            double z = Double.parseDouble(words[3]);
+                            double r = Double.parseDouble(words[4]);
+                            centre = new Point(x, y, z);
+                            radius = r;
+                            // Process sphere parameters
+                        } catch (NumberFormatException e) {
+                            System.out.println("Format de nombre invalide dans la ligne de la sphère.");
+                        }
                     }
-                } else {
-                    System.out.println("Format de ligne de sphère invalide : " + line);
+
                 }
-            } else {
-                System.out.println("Fichier de sphère vide.");
             }
-
-
             br.close();
         } catch (IOException e) {
             System.out.println("Erreur de lecture du fichier : " + e.getMessage());
