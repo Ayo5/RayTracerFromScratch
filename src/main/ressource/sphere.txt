@@ -1,2 +1,9 @@
+maxverts 4
+
+vertex -1 -1 0
+vertex +1 -1 0
+vertex +1 +1 0
+
+tri 0 1 2
 
 sphere 1 2 3 4
