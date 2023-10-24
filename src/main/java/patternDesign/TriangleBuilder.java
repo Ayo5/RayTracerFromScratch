@@ -1,2 +1,4 @@
-package main.java.patternDesign;public class TriangleBuilder {
+package main.java.patternDesign;
+
+public class TriangleBuilder {
 }
