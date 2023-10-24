@@ -16,4 +16,6 @@ public abstract class SceneObject {
     public void setMaterial(Material material) {
         this.material = material;
     }
+
+    public abstract double findIntersectionDistance(Point p, Vector d);
 }

@@ -17,8 +17,8 @@ public class Ray {
         return direction;
     }
 
-    public Vector pointAt(double t) {
+    public Point pointAt(double t) {
         // Calcule un point le long du rayon à une distance t de l'origine
-        return origin.multiply(-1).multiply(direction.multiplicationScalar(t));
+        return origin.addition(direction.multiplicationScalar(t));
     }
 }

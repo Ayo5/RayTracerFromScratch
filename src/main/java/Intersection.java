@@ -17,7 +17,7 @@ public class Intersection {
         return object;
     }
 
-    public Triplet getPoint() {
+    public Triplet getPoint(Point intersectionPoint) {
         return point;
     }
 
@@ -27,5 +27,10 @@ public class Intersection {
 
     public double getDistance() {
         return distance;
+    }
+
+
+    public void setIntersectionDistance(double distance) {
+        this.distance = distance;
     }
 }
