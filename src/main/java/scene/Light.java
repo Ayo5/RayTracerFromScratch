@@ -1,13 +1,26 @@
 package main.java.scene;
+import main.java.coordinate.Vector;
 import main.java.scene.Color;
 
 import java.io.*;
 
 public class Light {
     private Color color;
+    private Vector direction;
+    private double intensity;
 
-    public Light(Color color) {
+    public Vector getDirection() {
+        return direction;
+    }
+
+    public double getIntensity() {
+        return intensity;
+    }
+
+    public Light(Color color, Vector direction, double intensity) {
         this.color = color;
+        this.direction = direction;
+        this.intensity = intensity;
     }
 
     public Color getColor() {
