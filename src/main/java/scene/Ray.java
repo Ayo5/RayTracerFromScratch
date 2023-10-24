@@ -21,7 +21,9 @@ public class Ray {
     }
 
     public Point pointAt(double t) {
-        // Calcule un point le long du rayon à une distance t de l'origine
-        return origin.addition(direction.multiplicationScalar(t));
+        double x = origin.getX() + t * direction.getX();
+        double y = origin.getY() + t * direction.getY();
+        double z = origin.getZ() + t * direction.getZ();
+        return new Point(x, y, z);
     }
 }
