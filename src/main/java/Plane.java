@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Plan {
+public class Plane {
     private Point a ;
     private Point b ;
 
@@ -18,7 +18,7 @@ public class Plan {
         return b;
     }
 
-    public Plan() {
+    public Plane() {
         this.a = null ;
         this.b = null ;
     }

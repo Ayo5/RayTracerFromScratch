@@ -1,16 +1,16 @@
 package test.java;
 
-import main.java.Plan;
+import main.java.Plane;
 import main.java.Point;
 import org.junit.jupiter.api.Test;
 
-class PlanTest {
+class PlaneTest {
 
 
     @Test
     void testSettingFromFile() {
         String fileName = "sphere.txt";
-        Plan plan = new Plan();
+        Plane plan = new Plane();
         plan.settingFromFile(fileName);
 
         Point p1 = plan.getA();
