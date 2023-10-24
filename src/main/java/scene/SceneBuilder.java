@@ -33,12 +33,18 @@ public class SceneBuilder {
 
     public static void main(String[] args) {
         Triangle tri = new Triangle();
+        Camera camera = new Camera();
+        camera.setPosition(new Point(0.0, 0.0, 0.0));
+        camera.setLookAt(new Point(0.0, 0.0, -1.0));
+        camera.setUp(new Vector(0.0, 1.0, 0.0));
+        camera.setFov(60.0);
         tri.settingFromFile("triangle.txt");
         Scene scene = new SceneBuilder(640, 480)
                 .addLight(new Color(1.0, 1.0, 1.0))
                 .addObject(tri)
-                .setCamera(new Camera(new Point(0.0, 0.0, 0.0), new Point(0.0, 0.0, -1.0), new Vector(0.0, 1.0, 0.0), 60.0))
+                .setCamera(camera)
                 .build();
+
 
     }
 
