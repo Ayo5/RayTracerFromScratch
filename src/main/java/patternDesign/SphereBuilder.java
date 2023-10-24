@@ -1,2 +1,4 @@
-package main.java.patternDesign;public class SphereBuilder {
+package main.java.patternDesign;
+
+public class SphereBuilder {
 }
