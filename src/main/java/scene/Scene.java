@@ -18,6 +18,10 @@ public class Scene {
         return objects;
     }
 
+    public List<Light> getLights() {
+        return lights;
+    }
+
     public Scene(int imgWidth, int imgHeight) {
         this.objects = new ArrayList<>();
         this.lights = new ArrayList<>();

@@ -24,6 +24,18 @@ public class SceneParser {
                 if (words.length > 0) {
                     String keyword = words[0];
 
+                    if (keyword.equals("directional")) {
+                        DirectionalLight light = new DirectionalLight(null,null);
+                        light.loadPropertiesFromFile(fileName);
+                        scene.addLight(light);
+                    }
+
+                    if (keyword.equals("point")) {
+                        PointLight light = new PointLight(null,null);
+                        light.loadPropertiesFromFile(fileName);
+                        scene.addLight(light);
+                    }
+
                     if (keyword.equals("sphere")) {
                         Sphere sphere = new Sphere();
                         sphere.settingFromFile(fileName);

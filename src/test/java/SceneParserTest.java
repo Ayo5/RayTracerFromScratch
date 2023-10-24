@@ -15,6 +15,7 @@ public class SceneParserTest {
         // Affiche quelques informations sur la scène
         System.out.println("Nombre d'objets dans la scène : " + scene.getObjects().size());
         System.out.println("Camera de la scène : " + scene.getCamera());
+        System.out.println("Nombre de lumière: " + scene.getLights().size());
 
         // Vous pouvez ajouter d'autres tests ici selon les besoins
     }
