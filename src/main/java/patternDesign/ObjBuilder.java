@@ -1,2 +1,4 @@
-package main.java.patternDesign;public class ObjBuilder {
+package main.java.patternDesign;
+
+public class ObjBuilder {
 }
