@@ -1,7 +1,7 @@
 package main.java;
 
 public abstract class SceneObject {
-    private Material material;
+    public Material material;
 
     public SceneObject(Material material) {
         this.material = material;
