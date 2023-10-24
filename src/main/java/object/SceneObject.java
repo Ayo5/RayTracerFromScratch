@@ -1,4 +1,10 @@
-package main.java;
+package main.java.object;
+
+import main.java.coordinate.Point;
+import main.java.coordinate.Vector;
+import main.java.scene.Material;
+import main.java.scene.Ray;
+import main.java.scene.Scene;
 
 public abstract class SceneObject {
     private Material material;

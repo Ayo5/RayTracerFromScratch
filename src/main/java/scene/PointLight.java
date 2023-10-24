@@ -1,4 +1,8 @@
-package main.java;
+package main.java.scene;
+
+import main.java.coordinate.Point;
+import main.java.scene.Color;
+import main.java.scene.Light;
 
 public class PointLight extends Light {
     private Point position;

@@ -1,4 +1,6 @@
-package main.java;
+package main.java.scene;
+
+import main.java.coordinate.Vector;
 
 import java.awt.image.BufferedImage;
 import java.io.File;

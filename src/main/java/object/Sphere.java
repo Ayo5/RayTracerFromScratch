@@ -1,4 +1,8 @@
-package main.java;
+package main.java.object;
+
+import main.java.coordinate.Point;
+import main.java.coordinate.Vector;
+import main.java.scene.*;
 
 import java.io.*;
 

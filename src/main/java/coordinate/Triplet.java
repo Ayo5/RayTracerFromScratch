@@ -1,4 +1,4 @@
-package main.java;
+package main.java.coordinate;
 
 public class Triplet {
     private double x;

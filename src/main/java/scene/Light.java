@@ -1,4 +1,6 @@
-package main.java;
+package main.java.scene;
+import main.java.scene.Color;
+
 import java.io.*;
 
 public class Light {

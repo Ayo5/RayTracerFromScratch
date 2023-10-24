@@ -1,7 +1,7 @@
 package test.java;
 
-import main.java.Point;
-import main.java.Sphere;
+import main.java.coordinate.Point;
+import main.java.object.Sphere;
 
 public class SphereTest {
     public static void main(String[] args) {

@@ -1,9 +1,9 @@
 package test.java;
 
-import main.java.Point;
+import main.java.coordinate.Point;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import main.java.Vector;
+import main.java.coordinate.Vector;
 
 public class PointTest {
 

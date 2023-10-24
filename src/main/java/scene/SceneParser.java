@@ -1,4 +1,9 @@
-package main.java;
+package main.java.scene;
+
+import main.java.object.Plane;
+import main.java.object.Sphere;
+import main.java.object.Triangle;
+import main.java.scene.Scene;
 
 import java.io.BufferedReader;
 import java.io.File;

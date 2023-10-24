@@ -1,6 +1,6 @@
 package test.java;
 
-import main.java.Vector;
+import main.java.coordinate.Vector;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

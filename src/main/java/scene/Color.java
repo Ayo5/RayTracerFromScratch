@@ -1,4 +1,6 @@
-package main.java;
+package main.java.scene;
+
+import main.java.coordinate.Triplet;
 
 public class Color {
     private Triplet triplet;

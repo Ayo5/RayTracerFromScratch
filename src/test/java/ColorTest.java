@@ -1,6 +1,6 @@
 package test.java;
 
-import main.java.Color;
+import main.java.scene.Color;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

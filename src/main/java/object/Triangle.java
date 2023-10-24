@@ -1,15 +1,17 @@
-package main.java;
+package main.java.object;
 
-import main.java.Point;
+import main.java.coordinate.Vector;
+import main.java.scene.Material;
+import main.java.coordinate.Point;
+import main.java.scene.Ray;
+import main.java.scene.Scene;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-public class Triangle {
+public class Triangle extends SceneObject {
 
     private Point p1;
     private Point p2;
@@ -23,6 +25,16 @@ public class Triangle {
         this.p3 = null;
         this.material = null;
 
+    }
+
+    @Override
+    public boolean intersect(Ray ray, Scene.Intersection intersection) {
+        return false;
+    }
+
+    @Override
+    public double findIntersectionDistance(Point p, Vector d) {
+        return 0;
     }
 
     public void setP1(Point p1) {

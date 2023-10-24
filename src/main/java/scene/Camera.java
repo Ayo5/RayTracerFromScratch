@@ -1,4 +1,7 @@
-package main.java;
+package main.java.scene;
+
+import main.java.coordinate.Point;
+import main.java.coordinate.Vector;
 
 public class Camera {
     private Point position; // Position de la caméra (l'œil)

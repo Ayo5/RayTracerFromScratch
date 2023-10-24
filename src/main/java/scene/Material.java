@@ -1,9 +1,9 @@
-package main.java;
+package main.java.scene;
 
-import java.awt.*;
+import main.java.scene.Color;
 
 public class Material {
-    private Color color;
+    private main.java.scene.Color color;
     private double reflectivity;
     private double shininess;
 

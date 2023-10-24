@@ -1,7 +1,7 @@
 package test.java;
 
-import main.java.Plane;
-import main.java.Point;
+import main.java.object.Plane;
+import main.java.coordinate.Point;
 import org.junit.jupiter.api.Test;
 
 class PlaneTest {

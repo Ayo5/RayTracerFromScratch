@@ -1,11 +1,16 @@
-package main.java;
+package main.java.object;
+
+import main.java.coordinate.Point;
+import main.java.coordinate.Vector;
+import main.java.scene.Ray;
+import main.java.scene.Scene;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Plane {
+public class Plane extends SceneObject {
     private Point a ;
     private Point b ;
 
@@ -21,6 +26,16 @@ public class Plane {
     public Plane() {
         this.a = null ;
         this.b = null ;
+    }
+
+    @Override
+    public boolean intersect(Ray ray, Scene.Intersection intersection) {
+        return false;
+    }
+
+    @Override
+    public double findIntersectionDistance(Point p, Vector d) {
+        return 0;
     }
 
     public void settingFromFile(String fileName) {

@@ -1,13 +1,13 @@
 package test.java;
 
-import main.java.Light;
-import main.java.Color;
+import main.java.scene.Light;
+import main.java.scene.Color;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import main.java.DirectionalLight;
-import main.java.PointLight;
-import main.java.Point;
-import main.java.Vector;
+import main.java.scene.DirectionalLight;
+import main.java.scene.PointLight;
+import main.java.coordinate.Point;
+import main.java.coordinate.Vector;
 
 
 public class LightTest {

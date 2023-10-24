@@ -1,4 +1,6 @@
-package main.java;
+package main.java.scene;
+
+import main.java.coordinate.Vector;
 
 public class DirectionalLight extends Light {
     private Vector direction;

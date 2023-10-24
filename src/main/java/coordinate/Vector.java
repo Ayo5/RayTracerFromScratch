@@ -1,4 +1,5 @@
-package main.java;
+package main.java.coordinate;
+
 public class Vector {
     private Triplet triplet;
 

@@ -1,12 +1,8 @@
 package test.java;
 
-import main.java.Point;
-import main.java.Triangle;
+import main.java.coordinate.Point;
+import main.java.object.Triangle;
 import org.junit.jupiter.api.Test;
-
-import java.net.SocketPermission;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class TriangleTest {
 
