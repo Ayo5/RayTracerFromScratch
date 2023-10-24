@@ -3,11 +3,11 @@ package main.java;
 public abstract class SceneObject {
     private Material material;
 
-    public SceneObject(Material material) {
-        this.material = material;
+    public  SceneObject() {
+        this.material = null;
     }
 
-    public abstract boolean intersect(Ray ray, Intersection intersection);
+    public abstract boolean intersect(Ray ray, Scene.Intersection intersection);
 
     public Material getMaterial() {
         return material;

@@ -1,17 +1,41 @@
 package main.java;
 
-import main.java.Point;
-
 import java.io.*;
 
-public class Sphere {
+public class Sphere extends SceneObject {
 
-    private Point centre;
+    private Point center;
     private double radius;
 
+    private Material material;
+
+    public Point getCentre() {
+        return center;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+
+    public Material getMaterial() {
+        return material;
+    }
+
+    public void setCentre(Point center) {
+        this.center = center;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+
     public Sphere() {
-        this.centre = null;
+        super() ;
+        this.center = null;
         this.radius = 0;
+
     }
 
     public void settingFromFile(String fileName) {
@@ -23,15 +47,25 @@ public class Sphere {
                 String[] words = line.split("\\s+");
                 if (words.length > 0) {
                     String keyword = words[0];
+                    if (keyword.equals("diffuse")) {
+                        try {
+                            double r = Double.parseDouble(words[1]);
+                            double g = Double.parseDouble(words[2]);
+                            double b = Double.parseDouble(words[3]);
+                            material = new Material(new Color(r, g, b));
+                        } catch (NumberFormatException e) {
+                            System.out.println("Format de nombre invalide dans la ligne de la diffuse.");
+                        }
+
+                    }
                     if (keyword.equals("sphere")) {
                         try {
                             double x = Double.parseDouble(words[1]);
                             double y = Double.parseDouble(words[2]);
                             double z = Double.parseDouble(words[3]);
                             double r = Double.parseDouble(words[4]);
-                            centre = new Point(x, y, z);
+                            center = new Point(x, y, z);
                             radius = r;
-                            // Process sphere parameters
                         } catch (NumberFormatException e) {
                             System.out.println("Format de nombre invalide dans la ligne de la sphère.");
                         }
@@ -44,12 +78,53 @@ public class Sphere {
             System.out.println("Erreur de lecture du fichier : " + e.getMessage());
         }
     }
+    @Override
+    public boolean intersect(Ray ray, Scene.Intersection intersection) {
+        Vector oc = ray.getOrigin().subtract(center);
+        double a = ray.getDirection().dotScalar(ray.getDirection());
+        double b = 2.0 * oc.dotScalar(ray.getDirection());
+        double c = oc.dotScalar(oc) - radius * radius;
+        double discriminant = b * b - 4 * a * c;
 
-    public Point getCentre() {
-        return centre;
+        if (discriminant > 0) {
+            double t1 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            double t2 = (-b + Math.sqrt(discriminant)) / (2 * a);
+
+            // Vérifiez si t1 ou t2 est positif (devrait être le cas si le rayon est orienté vers la sphère)
+            if (t1 > 0 || t2 > 0) {
+                double distance = Math.min(t1, t2);
+                Point intersectionPoint = ray.pointAt(distance);
+                intersection.getPoint(intersectionPoint);
+                intersection.setIntersectionDistance(distance);
+                return true;
+            }
+        }
+
+        return false;
     }
 
-    public double getRadius() {
-        return radius;
+    @Override
+    public double findIntersectionDistance(Point p, Vector d) {
+
+        Vector oc = p.subtract(center);
+        double a = d.dotScalar(d);
+        double b = 2.0 * oc.dotScalar(d);
+        double c = oc.dotScalar(oc) - radius * radius;
+        double discriminant = b * b - 4 * a * c;
+
+        if (discriminant < 0) {
+
+            return -1.0;
+        } else {
+            double t1 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            double t2 = (-b + Math.sqrt(discriminant)) / (2 * a);
+
+            if (t1 > 0 || t2 > 0) {
+                return Math.min(t1, t2);
+            }
+        }
+
+        return -1.0;
     }
 }
+

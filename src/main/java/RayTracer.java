@@ -38,7 +38,7 @@ public class RayTracer {
                 Ray ray = new Ray(scene.getCamera().getPosition(), direction);
 
                 // Calculez l'intersection entre le rayon et les objets de la scène
-                Intersection intersection = scene.calculateIntersection(ray);
+                Scene.Intersection intersection = scene.calculateIntersection(ray);
 
                 // Si le rayon a touché un objet, calculez la couleur du pixel
                 if (intersection != null) {

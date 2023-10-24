@@ -7,9 +7,9 @@ public class Material {
     private double reflectivity;
     private double shininess;
 
-    public Material(Color color, double reflectivity, double shininess) {
+    public Material(Color color) {
         this.color = color;
-        this.reflectivity = reflectivity;
-        this.shininess = shininess;
+        this.reflectivity = 0;
+        this.shininess = 0;
     }
 }
