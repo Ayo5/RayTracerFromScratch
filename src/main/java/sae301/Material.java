@@ -1,9 +1,10 @@
-package main.java;
+package sae301;
 
 import java.awt.*;
+import java.awt.Color;
 
 public class Material {
-    private Color color;
+    private java.awt.Color color;
     private double reflectivity;
     private double shininess;
 

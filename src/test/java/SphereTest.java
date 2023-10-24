@@ -1,7 +1,7 @@
 package test.java;
 
-import main.java.Point;
-import main.java.Sphere;
+import sae301.Point;
+import sae301.Sphere;
 
 public class SphereTest {
     public static void main(String[] args) {

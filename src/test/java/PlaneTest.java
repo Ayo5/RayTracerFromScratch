@@ -1,7 +1,7 @@
 package test.java;
 
-import main.java.Plane;
-import main.java.Point;
+import sae301.Plane;
+import sae301.Point;
 import org.junit.jupiter.api.Test;
 
 class PlaneTest {

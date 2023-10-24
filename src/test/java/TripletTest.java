@@ -1,6 +1,6 @@
 package test.java;
 
-import main.java.Triplet;
+import sae301.Triplet;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

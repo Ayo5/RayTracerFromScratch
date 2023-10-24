@@ -1,6 +1,6 @@
-package main.java;
+package sae301;
 
-import main.java.Point;
+import sae301.Point;
 
 import java.io.BufferedReader;
 import java.io.File;

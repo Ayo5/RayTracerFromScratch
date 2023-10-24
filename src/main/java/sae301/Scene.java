@@ -1,6 +1,4 @@
-package main.java;
-
-import main.java.SceneObject;
+package sae301;
 
 import java.util.ArrayList;
 import java.util.List;

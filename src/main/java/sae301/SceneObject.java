@@ -1,4 +1,4 @@
-package main.java;
+package sae301;
 
 public abstract class SceneObject {
     private Material material;

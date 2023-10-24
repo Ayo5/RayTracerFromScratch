@@ -1,4 +1,5 @@
-package main.java;
+package sae301;
+
 
 public class Camera {
     private Point position; // Position de la caméra (l'œil)

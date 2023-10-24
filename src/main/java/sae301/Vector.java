@@ -1,4 +1,4 @@
-package main.java;
+package sae301;
 public class Vector {
     private Triplet triplet;
 

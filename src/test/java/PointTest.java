@@ -1,9 +1,9 @@
 package test.java;
 
-import main.java.Point;
+import sae301.Point;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import main.java.Vector;
+import sae301.Vector;
 
 public class PointTest {
 

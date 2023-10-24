@@ -1,10 +1,8 @@
 package test.java;
 
-import main.java.Point;
-import main.java.Triangle;
+import sae301.Point;
+import sae301.Triangle;
 import org.junit.jupiter.api.Test;
-
-import java.net.SocketPermission;
 
 import static org.junit.jupiter.api.Assertions.*;
 

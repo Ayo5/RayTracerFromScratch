@@ -1,4 +1,4 @@
-package main.java;
+package sae301;
 
 public class DirectionalLight extends Light {
     private Vector direction;

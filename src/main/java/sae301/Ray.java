@@ -1,4 +1,4 @@
-package main.java;
+package sae301;
 
 public class Ray {
     private Point origin; // Origine du rayon
@@ -17,8 +17,4 @@ public class Ray {
         return direction;
     }
 
-    public Point pointAt(double t) {
-        // Calcule un point le long du rayon à une distance t de l'origine
-        return origin.addition(direction.multiplicationScalar(t));
-    }
 }

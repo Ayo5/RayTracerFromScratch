@@ -1,4 +1,4 @@
-package main.java;
+package sae301;
 
 public class Color {
     private Triplet triplet;

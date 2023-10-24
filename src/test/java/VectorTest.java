@@ -1,6 +1,6 @@
 package test.java;
 
-import main.java.Vector;
+import sae301.Vector;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

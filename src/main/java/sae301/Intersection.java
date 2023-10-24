@@ -1,4 +1,4 @@
-package main.java;
+package sae301;
 
 public class Intersection {
     private SceneObject object; // L'objet avec lequel le rayon interagit

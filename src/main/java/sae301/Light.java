@@ -1,4 +1,4 @@
-package main.java;
+package sae301;
 import java.io.*;
 
 public class Light {

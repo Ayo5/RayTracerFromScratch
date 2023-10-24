@@ -1,4 +1,4 @@
-package main.java;
+package sae301;
 
 public class Point {
     private Triplet triplet;

@@ -1,26 +1,17 @@
-package main.java;
+package sae301;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import sae301.Point;
 
-public class Plane {
-    private Point a ;
-    private Point b ;
+import java.io.*;
 
+public class Sphere {
 
-    public Point getA() {
-        return a;
-    }
+    private Point centre;
+    private double radius;
 
-    public Point getB() {
-        return b;
-    }
-
-    public Plane() {
-        this.a = null ;
-        this.b = null ;
+    public Sphere() {
+        this.centre = null;
+        this.radius = 0;
     }
 
     public void settingFromFile(String fileName) {
@@ -32,16 +23,15 @@ public class Plane {
                 String[] words = line.split("\\s+");
                 if (words.length > 0) {
                     String keyword = words[0];
-                    if (keyword.equals("plane")) {
+                    if (keyword.equals("sphere")) {
                         try {
                             double x = Double.parseDouble(words[1]);
                             double y = Double.parseDouble(words[2]);
                             double z = Double.parseDouble(words[3]);
-                            double u = Double.parseDouble(words[4]);
-                            double v = Double.parseDouble(words[5]);
-                            double w = Double.parseDouble(words[6]);
-                            a = new Point(x, y, z);
-                            b = new Point(u, v, w);
+                            double r = Double.parseDouble(words[4]);
+                            centre = new Point(x, y, z);
+                            radius = r;
+                            // Process sphere parameters
                         } catch (NumberFormatException e) {
                             System.out.println("Format de nombre invalide dans la ligne de la sphère.");
                         }
@@ -53,5 +43,13 @@ public class Plane {
         } catch (IOException e) {
             System.out.println("Erreur de lecture du fichier : " + e.getMessage());
         }
+    }
+
+    public Point getCentre() {
+        return centre;
+    }
+
+    public double getRadius() {
+        return radius;
     }
 }

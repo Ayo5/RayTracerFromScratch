@@ -1,13 +1,13 @@
 package test.java;
 
-import main.java.Light;
-import main.java.Color;
+import sae301.Light;
+import sae301.Color;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import main.java.DirectionalLight;
-import main.java.PointLight;
-import main.java.Point;
-import main.java.Vector;
+import sae301.DirectionalLight;
+import sae301.PointLight;
+import sae301.Point;
+import sae301.Vector;
 
 
 public class LightTest {
