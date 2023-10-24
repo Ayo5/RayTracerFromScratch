@@ -1,15 +1,15 @@
 package main.java;
 
 public class Ray {
-    private Vector origin; // Origine du rayon
+    private Point origin; // Origine du rayon
     private Vector direction; // Direction du rayon
 
-    public Ray(Vector origin, Vector direction) {
+    public Ray(Point origin, Vector direction) {
         this.origin = origin;
-        this.direction = direction; // Assurez-vous que la direction est normalisée
+        this.direction = direction.normalyze(); // Assurez-vous que la direction est normalisée
     }
 
-    public Vector getOrigin() {
+    public Point getOrigin() {
         return origin;
     }
 
@@ -19,6 +19,6 @@ public class Ray {
 
     public Vector pointAt(double t) {
         // Calcule un point le long du rayon à une distance t de l'origine
-        return origin.addition(direction.multiplicationScalar(t));
+        return origin.multiply(-1).multiply(direction.multiplicationScalar(t));
     }
 }
