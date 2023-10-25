@@ -4,9 +4,12 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+<<<<<<< HEAD
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/ressource" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/out" />
+=======
+>>>>>>> SceneParser
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

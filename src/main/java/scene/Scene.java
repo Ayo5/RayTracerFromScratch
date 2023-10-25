@@ -14,6 +14,14 @@ public class Scene {
     private int imgWidth;
     private int imgHeight;
 
+    public List<SceneObject> getObjects() {
+        return objects;
+    }
+
+    public List<Light> getLights() {
+        return lights;
+    }
+
     public Scene(int imgWidth, int imgHeight) {
         this.objects = new ArrayList<>();
         this.lights = new ArrayList<>();

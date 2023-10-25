@@ -24,4 +24,13 @@ public class Ray {
         return direction;
     }
 
+<<<<<<< HEAD
+=======
+    public Point pointAt(double t) {
+        double x = origin.getX() + t * direction.getX();
+        double y = origin.getY() + t * direction.getY();
+        double z = origin.getZ() + t * direction.getZ();
+        return new Point(x, y, z);
+    }
+>>>>>>> SceneParser
 }
