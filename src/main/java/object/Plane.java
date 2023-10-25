@@ -13,6 +13,8 @@ import java.io.IOException;
 public class Plane extends SceneObject {
     private Point a ;
     private Point b ;
+    private Vector q; //Point belonging to the plane
+    private Vector n; //Normal of the plane
 
 
     public Point getA() {
@@ -23,9 +25,11 @@ public class Plane extends SceneObject {
         return b;
     }
 
-    public Plane() {
+    public Plane(Vector q, Vector n) {
         this.a = null ;
         this.b = null ;
+        this.q = q;
+        this.n = n.normalyze();
     }
 
     @Override
@@ -36,6 +40,24 @@ public class Plane extends SceneObject {
     @Override
     public double findIntersectionDistance(Point p, Vector d) {
         return 0;
+    }
+
+    @Override
+    public double findIntersectionDistance(Vector lookFrom, Vector direction) {
+        double dotProduct = direction.dotScalar(n);
+
+        //If the direction vector is parallel to the plane (dotProduct = 0), there is no intersection
+        if (dotProduct == 0) {
+            return Double.POSITIVE_INFINITY;
+        }
+
+        double t = q.subtraction(lookFrom).dotScalar(n) / dotProduct;
+
+        //If t is negative, the intersection is behind the camera's direction
+        if (t < 0) {
+            return Double.POSITIVE_INFINITY;
+        }
+        return t;
     }
 
     public void settingFromFile(String fileName) {
