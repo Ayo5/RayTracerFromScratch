@@ -1,3 +1,4 @@
+
 package main.java.object;
 
 import main.java.coordinate.Vector;
@@ -5,6 +6,7 @@ import main.java.scene.Material;
 import main.java.coordinate.Point;
 import main.java.scene.Ray;
 import main.java.scene.Scene;
+
 
 import java.io.BufferedReader;
 import java.io.File;

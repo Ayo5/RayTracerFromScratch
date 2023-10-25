@@ -1,5 +1,6 @@
 package test.java;
 
+
 import main.java.scene.Light;
 import main.java.scene.Color;
 import org.junit.Test;
@@ -8,6 +9,7 @@ import main.java.scene.DirectionalLight;
 import main.java.scene.PointLight;
 import main.java.coordinate.Point;
 import main.java.coordinate.Vector;
+
 
 
 public class LightTest {
@@ -27,11 +29,11 @@ public class LightTest {
         Color color = new Color(1.0, 0.0, 0.0);
         Point position = new Point(2.0, 3.0, 4.0);
         double intensity = 100.0;
-        PointLight light = new PointLight(color, position, intensity);
+        PointLight light = new PointLight(color, position);
 
         assertEquals(color, light.getColor());
-        assertEquals(position, light.getPosition());
-        assertEquals(intensity, light.getIntensity(), 0.001);
+        assertEquals(position, light.getPoint());
+
     }
 
     @Test

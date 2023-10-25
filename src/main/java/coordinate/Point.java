@@ -1,4 +1,6 @@
+
 package main.java.coordinate;
+
 
 public class Point {
     private Triplet triplet;

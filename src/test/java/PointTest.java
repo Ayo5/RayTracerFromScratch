@@ -1,5 +1,6 @@
 package test.java;
 
+
 import main.java.coordinate.Point;
 import org.junit.Test;
 import static org.junit.Assert.*;

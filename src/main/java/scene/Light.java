@@ -1,3 +1,4 @@
+
 package main.java.scene;
 import main.java.scene.Color;
 
@@ -7,6 +8,10 @@ public class Light {
     private Color color;
 
     public Light(Color color) {
+        this.color = color;
+    }
+
+    public void setColor(Color color) {
         this.color = color;
     }
 
@@ -24,7 +29,7 @@ public class Light {
             while ((line = br.readLine()) != null) {
                 String[] words = line.split("\\s+");
                 if (words.length >= 1) {
-                    if (words[0].equals("color")) {
+                    if (words[0].equals("diffuse")) {
                         if (words.length >= 4) {
                             try {
                                 double r = Double.parseDouble(words[1]);

@@ -1,8 +1,10 @@
+
 package main.java.scene;
 
 import main.java.coordinate.Point;
 import main.java.coordinate.Triplet;
 import main.java.object.SceneObject;
+
 
 public class Intersection {
     private SceneObject object; // L'objet avec lequel le rayon interagit
