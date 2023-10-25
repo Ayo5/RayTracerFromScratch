@@ -1,10 +1,7 @@
-<<<<<<<< HEAD:src/main/java/sae301/Light.java
-package sae301;
-========
+
 package main.java.scene;
 import main.java.scene.Color;
 
->>>>>>>> 4823f2e9ab7300190fceef1fbaf6b39831c73335:src/main/java/scene/Light.java
 import java.io.*;
 
 public class Light {

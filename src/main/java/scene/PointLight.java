@@ -1,21 +1,17 @@
-<<<<<<<< HEAD:src/main/java/sae301/PointLight.java
-package sae301;
-========
+
 package main.java.scene;
 
 import main.java.coordinate.Point;
-<<<<<<< HEAD
+
 import main.java.scene.Color;
 import main.java.scene.Light;
->>>>>>>> 4823f2e9ab7300190fceef1fbaf6b39831c73335:src/main/java/scene/PointLight.java
-=======
 
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
->>>>>>> SceneParser
+
 
 public class PointLight extends Light {
     private Point point;

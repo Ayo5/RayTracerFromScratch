@@ -1,13 +1,11 @@
-<<<<<<<< HEAD:src/main/java/sae301/Plane.java
-package sae301;
-========
+
 package main.java.object;
 
 import main.java.coordinate.Point;
 import main.java.coordinate.Vector;
 import main.java.scene.Ray;
 import main.java.scene.Scene;
->>>>>>>> 4823f2e9ab7300190fceef1fbaf6b39831c73335:src/main/java/object/Plane.java
+
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -1,16 +1,10 @@
 package test.java;
 
-<<<<<<< HEAD
-import sae301.Point;
-import org.junit.Test;
-import static org.junit.Assert.*;
-import sae301.Vector;
-=======
+
 import main.java.coordinate.Point;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import main.java.coordinate.Vector;
->>>>>>> 4823f2e9ab7300190fceef1fbaf6b39831c73335
 
 public class PointTest {
 

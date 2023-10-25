@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/main/java/sae301/Triangle.java
-package sae301;
 
-import sae301.Point;
-========
 package main.java.object;
 
 import main.java.coordinate.Vector;
@@ -10,7 +6,7 @@ import main.java.scene.Material;
 import main.java.coordinate.Point;
 import main.java.scene.Ray;
 import main.java.scene.Scene;
->>>>>>>> 4823f2e9ab7300190fceef1fbaf6b39831c73335:src/main/java/object/Triangle.java
+
 
 import java.io.BufferedReader;
 import java.io.File;

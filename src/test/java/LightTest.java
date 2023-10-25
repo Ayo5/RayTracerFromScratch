@@ -1,15 +1,6 @@
 package test.java;
 
-<<<<<<< HEAD
-import sae301.Light;
-import sae301.Color;
-import org.junit.Test;
-import static org.junit.Assert.*;
-import sae301.DirectionalLight;
-import sae301.PointLight;
-import sae301.Point;
-import sae301.Vector;
-=======
+
 import main.java.scene.Light;
 import main.java.scene.Color;
 import org.junit.Test;
@@ -18,7 +9,7 @@ import main.java.scene.DirectionalLight;
 import main.java.scene.PointLight;
 import main.java.coordinate.Point;
 import main.java.coordinate.Vector;
->>>>>>> 4823f2e9ab7300190fceef1fbaf6b39831c73335
+
 
 
 public class LightTest {

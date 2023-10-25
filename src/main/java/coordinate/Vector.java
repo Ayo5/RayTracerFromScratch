@@ -1,9 +1,6 @@
-<<<<<<<< HEAD:src/main/java/sae301/Vector.java
-package sae301;
-========
+
 package main.java.coordinate;
 
->>>>>>>> 4823f2e9ab7300190fceef1fbaf6b39831c73335:src/main/java/coordinate/Vector.java
 public class Vector {
     private Triplet triplet;
 

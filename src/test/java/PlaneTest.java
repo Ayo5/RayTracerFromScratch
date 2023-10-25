@@ -1,12 +1,11 @@
 package test.java;
 
-<<<<<<< HEAD
-import sae301.Plane;
-import sae301.Point;
-=======
-import main.java.object.Plane;
+
+
+
+
 import main.java.coordinate.Point;
->>>>>>> 4823f2e9ab7300190fceef1fbaf6b39831c73335
+import main.java.object.Plane;
 import org.junit.jupiter.api.Test;
 
 class PlaneTest {
