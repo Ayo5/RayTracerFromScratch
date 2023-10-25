@@ -1,10 +1,9 @@
 
 package main.java.object;
 
-import main.java.coordinate.Vector;
+import main.java.math.Vector;
 import main.java.scene.Color;
-import main.java.scene.Material;
-import main.java.coordinate.Point;
+import main.java.math.Point;
 import main.java.scene.Ray;
 import main.java.scene.Scene;
 
@@ -30,14 +29,42 @@ public class Triangle extends SceneObject {
     }
 
     @Override
-    public boolean intersect(Ray ray, Scene.Intersection intersection) {
-        return false;
+    public Vector intersect(Ray ray) {
+        Vector e1 = p2.subtract(p1);
+        Vector e2 = p3.subtract(p1);
+        Vector h = ray.getDirection().dotVectorial(e2);
+        double a = e1.lenght()*(h.lenght());
+
+        if (a > -Double.MIN_VALUE && a < Double.MIN_VALUE) {
+            return null; // Rayon parallèle au triangle
+        }
+
+        double f = 1.0 / a;
+        Vector s = ray.getOrigin().subtract(p1);
+        double u = f * s.lenght()*(h.lenght());
+
+        if (u < 0.0 || u > 1.0) {
+            return null;
+        }
+
+        Vector q = s.dotVectorial(e1);
+        double v = f * ray.getDirection().dotScalar(q);
+
+        if (v < 0.0 || u + v > 1.0) {
+            return null;
+        }
+
+        double t = f * e2.dotScalar(q);
+
+        if (t > Double.MIN_VALUE) {
+            return new Vector(ray.getOrigin().getX(),ray.getOrigin().getY(),ray.getOrigin().getZ())
+                    .addition(ray.getDirection().multiplicationScalar(t));
+        } else {
+            return null;
+        }
     }
 
-    @Override
-    public double findIntersectionDistance(Point p, Vector d) {
-        return 0;
-    }
+
 
     public void setP1(Point p1) {
         this.p1 = p1;

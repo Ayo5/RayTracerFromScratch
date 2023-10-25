@@ -1,7 +1,7 @@
 
 package main.java.scene;
 
-import main.java.coordinate.Triplet;
+import main.java.math.Triplet;
 
 
 public class Color {

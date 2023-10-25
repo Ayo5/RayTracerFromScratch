@@ -1,7 +1,7 @@
 package main.java.object;
 
-import main.java.coordinate.Point;
-import main.java.coordinate.Vector;
+import main.java.math.Point;
+import main.java.math.Vector;
 import main.java.scene.*;
 
 import java.io.*;
@@ -34,7 +34,7 @@ public class Sphere extends SceneObject {
 
 
     public Sphere(Point center, double radius, Color color) {
-        super(null) ;
+        super(null);
         this.center = null;
         this.radius = 0;
 
@@ -80,53 +80,33 @@ public class Sphere extends SceneObject {
             System.out.println("Erreur de lecture du fichier : " + e.getMessage());
         }
     }
+
     @Override
-    public boolean intersect(Ray ray, Scene.Intersection intersection) {
-        Vector oc = ray.getOrigin().subtract(center);
+    public Vector intersect(Ray ray) {
+        Vector oc = new Point(ray.getOrigin().getX(), ray.getOrigin().getY(), ray.getOrigin().getZ()).subtract(center);
         double a = ray.getDirection().dotScalar(ray.getDirection());
         double b = 2.0 * oc.dotScalar(ray.getDirection());
         double c = oc.dotScalar(oc) - radius * radius;
         double discriminant = b * b - 4 * a * c;
-
         if (discriminant > 0) {
-            double t1 = (-b - Math.sqrt(discriminant)) / (2 * a);
-            double t2 = (-b + Math.sqrt(discriminant)) / (2 * a);
 
-            // Vérifiez si t1 ou t2 est positif (devrait être le cas si le rayon est orienté vers la sphère)
-            if (t1 > 0 || t2 > 0) {
-                double distance = Math.min(t1, t2);
-                Point intersectionPoint = ray.pointAt(distance);
-                intersection.getPoint(intersectionPoint);
-                intersection.setIntersectionDistance(distance);
-                return true;
+            double t1 = (-b + Math.sqrt(discriminant)) / (2.0 * a);
+            double t2 = (-b - Math.sqrt(discriminant)) / (2.0 * a);
+
+            if (t1 > 0 && t2 > 0) {
+                double t = Math.min(t1, t2);
+                return new Vector(ray.getOrigin().getX(),ray.getOrigin().getY(),ray.getOrigin().getZ())
+                        .addition(ray.getDirection().multiplicationScalar(t));
+            } else if (t1 > 0) {
+                return new Vector(ray.getOrigin().getX(),ray.getOrigin().getY(),ray.getOrigin().getZ())
+                        .addition(ray.getDirection().multiplicationScalar(t1));
+            } else if (t2 > 0) {
+                return new Vector(ray.getOrigin().getX(),ray.getOrigin().getY(),ray.getOrigin().getZ())
+                        .addition(ray.getDirection().multiplicationScalar(t2));
             }
         }
-
-        return false;
+        return null;
     }
 
-    @Override
-    public double findIntersectionDistance(Point p, Vector d) {
-
-        Vector oc = p.subtract(center);
-        double a = d.dotScalar(d);
-        double b = 2.0 * oc.dotScalar(d);
-        double c = oc.dotScalar(oc) - radius * radius;
-        double discriminant = b * b - 4 * a * c;
-
-        if (discriminant < 0) {
-
-            return -1.0;
-        } else {
-            double t1 = (-b - Math.sqrt(discriminant)) / (2 * a);
-            double t2 = (-b + Math.sqrt(discriminant)) / (2 * a);
-
-            if (t1 > 0 || t2 > 0) {
-                return Math.min(t1, t2);
-            }
-        }
-
-        return -1.0;
-    }
 }
 

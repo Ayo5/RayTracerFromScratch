@@ -1,7 +1,7 @@
 package main.java.scene;
 
-import main.java.coordinate.Point;
-import main.java.coordinate.Triplet;
+import main.java.math.Point;
+import main.java.math.Triplet;
 import main.java.object.SceneObject;
 
 import java.util.ArrayList;

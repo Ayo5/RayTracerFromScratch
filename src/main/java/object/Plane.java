@@ -1,8 +1,8 @@
 
 package main.java.object;
 
-import main.java.coordinate.Point;
-import main.java.coordinate.Vector;
+import main.java.math.Point;
+import main.java.math.Vector;
 import main.java.scene.Color;
 import main.java.scene.Ray;
 import main.java.scene.Scene;
@@ -33,13 +33,14 @@ public class Plane extends SceneObject {
     }
 
     @Override
-    public boolean intersect(Ray ray, Scene.Intersection intersection) {
-        return false;
-    }
-
-    @Override
-    public double findIntersectionDistance(Point p, Vector d) {
-        return 0;
+    public Vector intersect(Ray ray) {
+        double t = -(ray.getOrigin().getY()-a.getY()) / ray.getDirection().getY();
+        if (t > 0 && Float.isFinite((float) t))
+        {
+            return new Vector(ray.getOrigin().getX(),ray.getOrigin().getY(),ray.getOrigin().getZ())
+                    .addition(ray.getDirection().multiplicationScalar(t));
+        }
+        return null;
     }
 
     public void settingFromFile(String fileName) {

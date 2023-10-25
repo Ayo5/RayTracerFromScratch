@@ -1,7 +1,7 @@
 package test.java;
 
 
-import main.java.coordinate.Triplet;
+import main.java.math.Triplet;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

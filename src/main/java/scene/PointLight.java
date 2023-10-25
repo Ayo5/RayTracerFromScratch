@@ -1,10 +1,7 @@
 
 package main.java.scene;
 
-import main.java.coordinate.Point;
-
-import main.java.scene.Color;
-import main.java.scene.Light;
+import main.java.math.Point;
 
 
 import java.io.BufferedReader;

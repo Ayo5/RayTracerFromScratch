@@ -1,5 +1,5 @@
 
-package main.java.coordinate;
+package main.java.math;
 
 
 public class Point {
@@ -28,4 +28,9 @@ public class Point {
     public Point multiply(double scalar) {
         return new Point(triplet.getX() * scalar, triplet.getY() * scalar, triplet.getZ() * scalar);
     }
+
+    public static float distance(Point a, Point b) {
+        return (float) Math.sqrt(Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2) + Math.pow(a.getZ() - b.getZ(), 2));
+    }
+
 }

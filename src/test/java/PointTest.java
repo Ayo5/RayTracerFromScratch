@@ -1,10 +1,10 @@
 package test.java;
 
 
-import main.java.coordinate.Point;
+import main.java.math.Point;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import main.java.coordinate.Vector;
+import main.java.math.Vector;
 
 public class PointTest {
 

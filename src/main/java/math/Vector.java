@@ -1,5 +1,5 @@
 
-package main.java.coordinate;
+package main.java.math;
 
 public class Vector {
     private Triplet triplet;
@@ -56,5 +56,10 @@ public class Vector {
     public double lenght() {
         return Math.sqrt(this.triplet.getX() * this.triplet.getX() + this.triplet.getY() * this.triplet.getY() + this.triplet.getZ()* this.triplet.getZ());
     }
+    public static float distance(Vector a, Vector b) {
+        return (float) Math.sqrt(Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2) + Math.pow(a.getZ() - b.getZ(), 2));
+    }
 
 }
+
+

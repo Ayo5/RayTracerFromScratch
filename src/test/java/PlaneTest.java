@@ -4,7 +4,7 @@ package test.java;
 
 
 
-import main.java.coordinate.Point;
+import main.java.math.Point;
 import main.java.object.Plane;
 import org.junit.jupiter.api.Test;
 

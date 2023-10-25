@@ -1,8 +1,7 @@
 package main.java.scene;
 
 import main.java.object.*;
-import main.java.coordinate.*;
-import main.java.scene.*;
+import main.java.math.*;
 
 public class SceneBuilder {
     private Scene scene;

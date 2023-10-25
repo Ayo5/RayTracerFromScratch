@@ -1,7 +1,7 @@
 
 package main.java.scene;
 
-import main.java.coordinate.Vector;
+import main.java.math.Vector;
 
 
 import java.io.BufferedReader;

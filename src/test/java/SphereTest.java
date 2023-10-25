@@ -1,6 +1,6 @@
 package test.java;
 
-import main.java.coordinate.Point;
+import main.java.math.Point;
 import main.java.object.Sphere;
 
 public class SphereTest {

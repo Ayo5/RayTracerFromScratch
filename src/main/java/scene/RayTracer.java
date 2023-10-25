@@ -1,7 +1,9 @@
 package main.java.scene;
 
-import main.java.coordinate.Triplet;
-import main.java.coordinate.Vector;
+import main.java.math.Point;
+import main.java.math.Triplet;
+import main.java.math.Vector;
+import main.java.object.SceneObject;
 
 
 import java.awt.image.BufferedImage;
@@ -26,28 +28,25 @@ public class RayTracer {
         this.scene = scene;
     }
 
-    public Color calculatePixelColor(Ray ray) {
-        Intersection closestIntersection = findClosestIntersection(ray);
-        if (closestIntersection == null) {
-            return new Color(0.0, 0.0, 0.0);
+
+    private Vector findClosestIntersection(Ray ray) {
+        Vector closestIntersection = null;
+        double closestDistance = Double.POSITIVE_INFINITY;
+
+        for (SceneObject object : scene.getObjects()) {
+            Point intersection = new Point(object.intersect(ray).getX(),object.intersect(ray).getY(),object.intersect(ray).getZ());
+            if (intersection != null) {
+                double distance = Point.distance(ray.getOrigin(),new Point(intersection.getX(),intersection.getY(),intersection.getZ()));
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestIntersection = new Vector(intersection.getX(),intersection.getY(),intersection.getZ());
+                }
+            }
         }
-        Color objectColor = closestIntersection.getObject().getColor();
-        Triplet normal = closestIntersection.getNormal().normalyze();
 
-
-
-
-        // Calculez la couleur diffuse (Lambertian reflection)
-        Color diffuseColor = objectColor.multiply(1);
-
-        return diffuseColor;
+        return closestIntersection;
     }
 
-    private Intersection findClosestIntersection(Ray ray) {
-        // Implémentez la logique de recherche de l'intersection la plus proche ici
-        // et retournez l'intersection la plus proche ou null si aucune intersection
-        return null;
-    }
 
     public void render() {
         double pixelWidth = 2.0 * Math.tan(Math.toRadians(fov / 2.0)) / imgWidth;
@@ -61,10 +60,10 @@ public class RayTracer {
                 // Calculez la direction du rayon pour ce pixel en fonction des coordonnées x et y,
                 // la position de la caméra et les vecteurs de la caméra
                 Vector direction = scene.getCamera().getUp() ;
+                Point pov = scene.getCamera().getPosition();
+                Ray ray = new Ray(pov, direction);
 
-                Ray ray = new Ray(scene.getCamera().getPosition(), direction);
-
-                Color pixelColor = calculatePixelColor(ray);
+                Color pixelColor = new Color(0.5, 0, 0.5);
 
                 image.setRGB(i, j, pixelColor.toRGB());
             }
@@ -80,11 +79,12 @@ public class RayTracer {
         }
     }
 
+
     public static void main(String[] args) {
-        int imgWidth = 1900 / 2;
-        int imgHeight = 1080 / 2;
+        int imgWidth = 640;
+        int imgHeight = 480;
         double fov = 60;
-        String outputFileName = "test.png";
+        String outputFileName = "m.png";
 
         Scene scene = SceneParser.parseScene("scene.txt");
 

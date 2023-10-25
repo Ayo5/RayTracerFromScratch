@@ -1,5 +1,5 @@
 
-package main.java.coordinate;
+package main.java.math;
 
 
 public class Triplet {
@@ -66,4 +66,9 @@ public class Triplet {
             return this;
         }
     }
+    public static float distance(Triplet a, Triplet b) {
+        return (float) Math.sqrt(Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2) + Math.pow(a.getZ() - b.getZ(), 2));
+    }
+
 }
+

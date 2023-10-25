@@ -1,8 +1,8 @@
 
 package main.java.scene;
 
-import main.java.coordinate.Point;
-import main.java.coordinate.Vector;
+import main.java.math.Point;
+import main.java.math.Vector;
 
 public class Ray {
     private Point origin; // Origine du rayon
