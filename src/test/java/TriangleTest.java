@@ -10,7 +10,7 @@ class TriangleTest {
     @Test
     void testSettingFromFile() {
         String fileName = "sphere.txt";
-        Triangle triangle = new Triangle();
+        Triangle triangle = new Triangle(null,null,null,null);
         triangle.settingFromFile(fileName);
 
         Point p1 = triangle.getP1();

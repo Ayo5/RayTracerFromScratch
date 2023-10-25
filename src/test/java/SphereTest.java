@@ -6,7 +6,7 @@ import main.java.object.Sphere;
 public class SphereTest {
     public static void main(String[] args) {
         String fileName = "sphere.txt";
-        Sphere sphere = new Sphere();
+        Sphere sphere = new Sphere(null, 0.0, null);
         sphere.settingFromFile(fileName);
         Point centre = sphere.getCentre();
         double radius = sphere.getRadius();
@@ -17,5 +17,6 @@ public class SphereTest {
             System.out.println("Centre de la sphère non défini.");
         }
         System.out.println("Rayon de la sphère : " + radius );
+        System.out.println("Couleur de la sphère :" + sphere.getColor().getG());
             }
 }

@@ -63,7 +63,7 @@ public class TripletTest {
     @Test
     public void testNormalization() {
         Triplet t = new Triplet(1, 2, 2);
-        Triplet normalized = t.normalisation();
+        Triplet normalized = t.normalyze();
         assertEquals(new Triplet(1.0 / 3, 2.0 / 3, 2.0 / 3), normalized);
     }
 }

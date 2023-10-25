@@ -2,6 +2,7 @@
 package main.java.object;
 
 import main.java.coordinate.Vector;
+import main.java.scene.Color;
 import main.java.scene.Material;
 import main.java.coordinate.Point;
 import main.java.scene.Ray;
@@ -19,13 +20,12 @@ public class Triangle extends SceneObject {
     private Point p2;
     private Point p3;
 
-    private Material material;
 
-    public Triangle() {
+    public Triangle(Point p1, Point p2, Point p3, Color color) {
+        super(null);
         this.p1 = null;
         this.p2 = null;
         this.p3 = null;
-        this.material = null;
 
     }
 
@@ -99,13 +99,9 @@ public class Triangle extends SceneObject {
                             int index3 = Integer.parseInt(words[3]);
 
                             if (index1 < listPoints.length && index2 < listPoints.length && index3 < listPoints.length) {
-                                Point p1 = listPoints[index1];
-                                Point p2 = listPoints[index2];
-                                Point p3 = listPoints[index3];
-                                Triangle triangle = new Triangle();
-                                triangle.setP1(p1);
-                                triangle.setP2(p2);
-                                triangle.setP3(p3);
+                                p1 = listPoints[index1];
+                                p2 = listPoints[index2];
+                                p3 = listPoints[index3];
                             } else {
                                 System.out.println("Indices de triangle invalides par rapport aux points spécifiés.");
                             }
@@ -119,7 +115,5 @@ public class Triangle extends SceneObject {
         } catch (IOException e) {
             System.out.println("Erreur de lecture du fichier : " + e.getMessage());
         }
-
     }
-
 }

@@ -3,6 +3,7 @@ package main.java.object;
 
 import main.java.coordinate.Point;
 import main.java.coordinate.Vector;
+import main.java.scene.Color;
 import main.java.scene.Ray;
 import main.java.scene.Scene;
 
@@ -25,7 +26,8 @@ public class Plane extends SceneObject {
         return b;
     }
 
-    public Plane() {
+    public Plane(Point a , Point b , Color color) {
+        super(null);
         this.a = null ;
         this.b = null ;
     }
@@ -49,6 +51,16 @@ public class Plane extends SceneObject {
                 String[] words = line.split("\\s+");
                 if (words.length > 0) {
                     String keyword = words[0];
+                    if (keyword.equals("ambient")) {
+                        try {
+                            double r = Double.parseDouble(words[1]);
+                            double g = Double.parseDouble(words[2]);
+                            double b = Double.parseDouble(words[3]);
+                            this.setColor(new Color(r, g, b));
+                        } catch (NumberFormatException e) {
+                            System.out.println("Format de nombre invalide dans la ligne de la couleur.");
+                        }
+                }
                     if (keyword.equals("plane")) {
                         try {
                             double x = Double.parseDouble(words[1]);

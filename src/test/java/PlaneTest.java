@@ -14,7 +14,7 @@ class PlaneTest {
     @Test
     void testSettingFromFile() {
         String fileName = "sphere.txt";
-        Plane plan = new Plane();
+        Plane plan = new Plane(null,null,null);
         plan.settingFromFile(fileName);
 
         Point p1 = plan.getA();

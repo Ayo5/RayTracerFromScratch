@@ -37,19 +37,19 @@ public class SceneParser {
                     }
 
                     if (keyword.equals("sphere")) {
-                        Sphere sphere = new Sphere();
+                        Sphere sphere = new Sphere(null,0,null);
                         sphere.settingFromFile(fileName);
                         scene.addObject(sphere);
                     }
 
                     if (keyword.equals("plane")) {
-                        Plane plane = new Plane();
+                        Plane plane = new Plane(null,null,null);
                         plane.settingFromFile(fileName);
                         scene.addObject(plane);
                     }
 
                     if (keyword.equals("maxverts")) {
-                        Triangle triangle = new Triangle();
+                        Triangle triangle = new Triangle(null, null ,null, null);
                         triangle.settingFromFile(fileName);
                         scene.addObject(triangle);
                     }

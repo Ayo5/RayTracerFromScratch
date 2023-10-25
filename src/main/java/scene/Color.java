@@ -35,6 +35,17 @@ public class Color {
         return new Color(triplet.getX() * other.getR(), triplet.getY() * other.getG(), triplet.getZ() * other.getB());
     }
 
+    public int toRGB(double value) {
+        int intValue = (int) (value * 255);
+        return Math.min(255, Math.max(0, intValue));
+    }
+
+    public int toRGB() {
+        int red = toRGB(getR());
+        int green = toRGB(getG());
+        int blue = toRGB(getB());
+        return (red << 16) | (green << 8) | blue;
+    }
 
     public boolean isBlack() {
         return triplet.getX() == 0.0 && triplet.getY() == 0.0 && triplet.getZ() == 0.0;

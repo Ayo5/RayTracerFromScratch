@@ -58,8 +58,6 @@ public class DirectionalLight extends Light {
 
 
 
-
-
     public Vector getDirection() {
         return direction;
     }

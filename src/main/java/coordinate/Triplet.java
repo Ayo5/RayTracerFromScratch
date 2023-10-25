@@ -57,8 +57,13 @@ public class Triplet {
     public double lenght() {
         return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z );
     }
-    public Triplet normalisation() {
-        double opposed_lenght = (1 / this.lenght());
-        return mulplicationScalar(opposed_lenght);
+    public Triplet normalyze() {
+        double length = this.lenght();
+        if (length != 0) {
+            double invLength = 1 / length;
+            return this.mulplicationScalar(invLength);
+        } else {
+            return this;
+        }
     }
 }

@@ -11,7 +11,6 @@ public class Sphere extends SceneObject {
     private Point center;
     private double radius;
 
-    private Material material;
 
     public Point getCentre() {
         return center;
@@ -21,9 +20,8 @@ public class Sphere extends SceneObject {
         return radius;
     }
 
-
-    public Material getMaterial() {
-        return material;
+    public Color getColor() {
+        return super.getColor();
     }
 
     public void setCentre(Point center) {
@@ -35,8 +33,8 @@ public class Sphere extends SceneObject {
     }
 
 
-    public Sphere() {
-        super() ;
+    public Sphere(Point center, double radius, Color color) {
+        super(null) ;
         this.center = null;
         this.radius = 0;
 
@@ -51,12 +49,12 @@ public class Sphere extends SceneObject {
                 String[] words = line.split("\\s+");
                 if (words.length > 0) {
                     String keyword = words[0];
-                    if (keyword.equals("diffuse")) {
+                    if (keyword.equals("ambient")) {
                         try {
                             double r = Double.parseDouble(words[1]);
                             double g = Double.parseDouble(words[2]);
                             double b = Double.parseDouble(words[3]);
-                            material = new Material(new Color(r, g, b));
+                            this.setColor(new Color(r, g, b));
                         } catch (NumberFormatException e) {
                             System.out.println("Format de nombre invalide dans la ligne de la diffuse.");
                         }
