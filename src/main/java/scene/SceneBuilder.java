@@ -33,7 +33,7 @@ public class SceneBuilder {
 
     public static void main(String[] args) {
         Triangle tri = new Triangle();
-        Camera camera = new Camera();
+        Camera camera = new Camera(null, null, null, 0.0);
         camera.setPosition(new Point(0.0, 0.0, 0.0));
         camera.setLookAt(new Point(0.0, 0.0, -1.0));
         camera.setUp(new Vector(0.0, 1.0, 0.0));

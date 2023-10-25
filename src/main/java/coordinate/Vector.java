@@ -45,11 +45,15 @@ public class Vector {
     }
 
     public Vector normalyze() {
-        double opposed_lenght = (1 / this.lenght());
-        return multiplicationScalar(opposed_lenght);
+        double length = this.lenght();
+        if (length != 0) {
+            double invLength = 1 / length;
+            return this.multiplicationScalar(invLength);
+        } else {
+            return this;
+        }
     }
-
-    private double lenght() {
+    public double lenght() {
         return Math.sqrt(this.triplet.getX() * this.triplet.getX() + this.triplet.getY() * this.triplet.getY() + this.triplet.getZ()* this.triplet.getZ());
     }
 

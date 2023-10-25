@@ -15,11 +15,11 @@ public class Camera {
     private Vector up;       // Vecteur vers le haut
     private double fov;     // Champ de vision
 
-    public Camera() {
-        this.position = null;
-        this.lookAt = null;
-        this.up = null; //up.normalyze(); // Assurez-vous que le vecteur vers le haut est normalisé
-        this.fov = 0;
+    public Camera(Point position, Point lookAt, Vector up, double fov) {
+        this.position = position;
+        this.lookAt = lookAt;
+        this.up = up; //up.normalyze(); // Assurez-vous que le vecteur vers le haut est normalisé
+        this.fov = fov;
     }
 
     public void setPosition(Point position) {

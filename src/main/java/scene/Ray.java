@@ -10,9 +10,8 @@ public class Ray {
 
     public Ray(Point origin, Vector direction) {
         this.origin = origin;
-        this.direction = direction.normalyze(); // Assurez-vous que la direction est normalisée
+        this.direction = direction;
     }
-
     public Point getOrigin() {
         return origin;
     }

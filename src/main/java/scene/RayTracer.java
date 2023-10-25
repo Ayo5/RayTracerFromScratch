@@ -1,6 +1,6 @@
 package main.java.scene;
 
-import main.java.coordinate.Point;
+
 import main.java.coordinate.Vector;
 
 import java.awt.image.BufferedImage;
@@ -26,24 +26,15 @@ public class RayTracer {
     }
 
     public void render() {
-        // Calculez la largeur et la hauteur des pixels en fonction du champ de vision et de la taille de l'image
         double pixelWidth = 2.0 * Math.tan(Math.toRadians(fov / 2.0)) / imgWidth;
         double pixelHeight = 2.0 * Math.tan(Math.toRadians(fov / 2.0)) / imgHeight;
 
-        // Parcourez tous les pixels de l'image
         for (int i = 0; i < imgWidth; i++) {
             for (int j = 0; j < imgHeight; j++) {
 
-                // Calculez le vecteur direction ⃗d
                 Vector direction = scene.getCamera().getUp();
 
-                // Créez un rayon à partir de la position de la caméra et de la direction calculée
                 Ray ray = new Ray(scene.getCamera().getPosition(), direction);
-
-                // Calculez l'intersection entre le rayon et les objets de la scène
-
-
-                // Si le rayon a touché un objet, calculez la couleur du pixel
 
             }
         }
@@ -65,8 +56,8 @@ public class RayTracer {
         double fov = 60;
         String outputFileName = "output.png";
 
-        Scene scene = new Scene(imgWidth, imgHeight);
-        scene.setCamera(new Camera(new Point(0, 0, 0), new Point(0, 0, -1), new Vector(0, 1, 0), fov));
+        Scene scene = SceneParser.parseScene("scene.txt");
+
         RayTracer rayTracer = new RayTracer(imgWidth, imgHeight, fov, outputFileName, scene);
         rayTracer.render();
         rayTracer.saveImage();

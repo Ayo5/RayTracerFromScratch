@@ -55,7 +55,7 @@ public class SceneParser {
                     }
 
                     if (keyword.equals("camera")) {
-                        Camera camera = new Camera();
+                        Camera camera = new Camera(null,null,null,0);
                         camera.loadCameraSettingsFromFile(fileName);
                         scene.setCamera(camera);
                     }

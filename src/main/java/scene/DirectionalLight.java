@@ -20,7 +20,7 @@ public class DirectionalLight extends Light {
 
     public void loadPropertiesFromFile(String filePath) {
         try {
-            File file = new File(filePath);
+            File file = new File("src/main/ressource/" + filePath);
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             String line;
