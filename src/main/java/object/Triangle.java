@@ -13,18 +13,21 @@ import java.io.IOException;
 
 public class Triangle extends SceneObject {
 
-    private Point p1;
-    private Point p2;
-    private Point p3;
-
+    private Vector a;
+    private Vector b;
+    private Vector c;
+    private Plane plane; //Plane containing the triangle
     private Material material;
 
-    public Triangle() {
-        this.p1 = null;
-        this.p2 = null;
-        this.p3 = null;
+    public Triangle(Vector a, Vector b, Vector c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
         this.material = null;
 
+        //Define the plane of the triangle using points p1, p2, p3
+        Vector n = (b.subtraction(a)).cross(c.subtraction(a)).normalyze();
+        this.plane = new Plane(a, n);
     }
 
     @Override
@@ -35,6 +38,39 @@ public class Triangle extends SceneObject {
     @Override
     public double findIntersectionDistance(Point p, Vector d) {
         return 0;
+    }
+
+    @Override
+    public double findIntersectionDistance(Vector lookFrom, Vector direction) {
+        double t = plane.findIntersectionDistance(lookFrom, direction);
+
+        //If t is positive and the point is inside the triangle, return t
+        //If not, return infinity
+        if (t < 0) {
+            return Double.POSITIVE_INFINITY;
+        }
+
+        Vector intersectionPoint = lookFrom.add(direction.scale(t));
+
+        //Check if the intersection point is inside the triangle
+        if (isInsideTriangle(intersectionPoint)) {
+            return t;
+        } else {
+            return Double.POSITIVE_INFINITY;
+        }
+    }
+
+    private boolean isInsideTriangle(Vector p) {
+        Vector ab = b.subtraction(a);
+        Vector bc = c.subtraction(b);
+        Vector ca = a.subtraction(c);
+        Vector ap = p.subtraction(a);
+        Vector bp = p.subtraction(b);
+        Vector cp = p.subtraction(c);
+
+        return (ab.cross(ap).dot(plane.getNormal()) >= 0)
+                && (bc.cross(bp).dot(plane.getNormal()) >= 0)
+                && (ca.cross(cp).dot(plane.getNormal()) >= 0);
     }
 
     public void setP1(Point p1) {
