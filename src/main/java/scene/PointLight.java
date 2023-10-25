@@ -12,16 +12,31 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import main.java.coordinate.Point;
 
+/**
+ * The PointLight class represents a point light source in a three-dimensional scene.
+ * It is characterized by its color and position.
+ */
 public class PointLight extends Light {
     private Point point;
 
+    /**
+     * Constructs a new PointLight with the specified color and position.
+     *
+     * @param color The color of the point light source.
+     * @param point The position of the point light source.
+     */
     public PointLight(Color color, Point point) {
         super(color);
         this.point = point;
     }
 
-
+    /**
+     * Loads properties of the point light source from a file specified by the given file path.
+     *
+     * @param filePath The path to the file containing light properties.
+     */
     public void loadPropertiesFromFile(String filePath) {
         try {
             File file = new File("src/main/ressource/" + filePath);
@@ -42,12 +57,12 @@ public class PointLight extends Light {
                                 double g = Double.parseDouble(words[5]);
                                 double b = Double.parseDouble(words[6]);
                                 point = new Point(x, y, z);
-                                this.setColor(new Color(r, g, b)) ;
+                                this.setColor(new Color(r, g, b));
                             } catch (NumberFormatException e) {
-                                System.out.println("Format de nombre invalide dans la ligne 'color'.");
+                                System.out.println("Invalid number format in the 'color' line.");
                             }
                         } else {
-                            System.out.println("Format invalide dans la ligne 'color'.");
+                            System.out.println("Invalid format in the 'color' line.");
                         }
                     }
                 }
@@ -58,6 +73,12 @@ public class PointLight extends Light {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Gets the position of the point light source.
+     *
+     * @return The position of the point light source.
+     */
     public Point getPoint() {
         return point;
     }

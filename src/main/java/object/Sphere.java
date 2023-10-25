@@ -6,6 +6,10 @@ import main.java.scene.*;
 
 import java.io.*;
 
+/**
+ * The Sphere class represents a three-dimensional sphere object in a scene.
+ * It extends the SceneObject class and defines methods for intersection testing and loading data from a file.
+ */
 public class Sphere extends SceneObject {
 
     private Point center;
@@ -13,38 +17,68 @@ public class Sphere extends SceneObject {
 
     private Material material;
 
+    /**
+     * Gets the center point of the sphere.
+     *
+     * @return The center point of the sphere.
+     */
     public Point getCentre() {
         return center;
     }
 
+    /**
+     * Gets the radius of the sphere.
+     *
+     * @return The radius of the sphere.
+     */
     public double getRadius() {
         return radius;
     }
 
-
+    /**
+     * Gets the material assigned to the sphere.
+     *
+     * @return The material of the sphere.
+     */
     public Material getMaterial() {
         return material;
     }
 
+    /**
+     * Sets the center point of the sphere.
+     *
+     * @param center The center point of the sphere.
+     */
     public void setCentre(Point center) {
         this.center = center;
     }
 
+    /**
+     * Sets the radius of the sphere.
+     *
+     * @param radius The radius of the sphere.
+     */
     public void setRadius(double radius) {
         this.radius = radius;
     }
 
-
+    /**
+     * Constructs a new Sphere object with null material, center, and zero radius.
+     */
     public Sphere() {
-        super() ;
+        super();
         this.center = null;
         this.radius = 0;
-
     }
 
+    /**
+     * Loads sphere data from a file specified by the given file name.
+     *
+     * @param fileName The name of the file containing sphere data.
+     */
     public void settingFromFile(String fileName) {
         try {
-            File file = new File("src/main/ressource/" + fileName);
+            File file = new File("src/main/resource/" + fileName);
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line;
             while ((line = br.readLine()) != null) {
@@ -58,9 +92,8 @@ public class Sphere extends SceneObject {
                             double b = Double.parseDouble(words[3]);
                             material = new Material(new Color(r, g, b));
                         } catch (NumberFormatException e) {
-                            System.out.println("Format de nombre invalide dans la ligne de la diffuse.");
+                            System.out.println("Invalid number format in the diffuse line.");
                         }
-
                     }
                     if (keyword.equals("sphere")) {
                         try {
@@ -71,17 +104,24 @@ public class Sphere extends SceneObject {
                             center = new Point(x, y, z);
                             radius = r;
                         } catch (NumberFormatException e) {
-                            System.out.println("Format de nombre invalide dans la ligne de la sphère.");
+                            System.out.println("Invalid number format in the sphere line.");
                         }
                     }
-
                 }
             }
             br.close();
         } catch (IOException e) {
-            System.out.println("Erreur de lecture du fichier : " + e.getMessage());
+            System.out.println("Error reading the file: " + e.getMessage());
         }
     }
+
+    /**
+     * Checks if a ray intersects with the sphere and populates the intersection data.
+     *
+     * @param ray           The ray to test for intersection.
+     * @param intersection  An intersection object to populate with data if an intersection is found.
+     * @return true if the ray intersects with the sphere, false otherwise.
+     */
     @Override
     public boolean intersect(Ray ray, Scene.Intersection intersection) {
         Vector oc = ray.getOrigin().subtract(center);
@@ -94,7 +134,6 @@ public class Sphere extends SceneObject {
             double t1 = (-b - Math.sqrt(discriminant)) / (2 * a);
             double t2 = (-b + Math.sqrt(discriminant)) / (2 * a);
 
-            // Vérifiez si t1 ou t2 est positif (devrait être le cas si le rayon est orienté vers la sphère)
             if (t1 > 0 || t2 > 0) {
                 double distance = Math.min(t1, t2);
                 Point intersectionPoint = ray.pointAt(distance);
@@ -107,9 +146,15 @@ public class Sphere extends SceneObject {
         return false;
     }
 
+    /**
+     * Finds the distance to the intersection point between the sphere and a ray defined by a point and direction vector.
+     *
+     * @param p  The point of origin for the ray.
+     * @param d  The direction vector of the ray.
+     * @return The distance to the intersection point, or -1.0 if there is no intersection.
+     */
     @Override
     public double findIntersectionDistance(Point p, Vector d) {
-
         Vector oc = p.subtract(center);
         double a = d.dotScalar(d);
         double b = 2.0 * oc.dotScalar(d);
@@ -117,7 +162,6 @@ public class Sphere extends SceneObject {
         double discriminant = b * b - 4 * a * c;
 
         if (discriminant < 0) {
-
             return -1.0;
         } else {
             double t1 = (-b - Math.sqrt(discriminant)) / (2 * a);
@@ -131,4 +175,3 @@ public class Sphere extends SceneObject {
         return -1.0;
     }
 }
-

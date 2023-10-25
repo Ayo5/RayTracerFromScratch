@@ -1,0 +1,207 @@
+@startuml
+class main.java.object.Sphere {
+- Point center
+- double radius
+- Material material
++ Point getCentre()
++ double getRadius()
++ Material getMaterial()
++ void setCentre(Point)
++ void setRadius(double)
++ void settingFromFile(String)
++ boolean intersect(Ray,Scene.Intersection)
++ double findIntersectionDistance(Point,Vector)
+}
+class main.java.scene.Intersection {
+- SceneObject object
+- Triplet point
+- Triplet normal
+- double distance
++ SceneObject getObject()
++ Triplet getPoint(Point)
++ Triplet getNormal()
++ double getDistance()
++ void setIntersectionDistance(double)
+}
+class main.java.scene.Material {
+- main.java.scene.Color color
+- double reflectivity
+- double shininess
+}
+class main.java.scene.Color {
+- Triplet triplet
++ double getR()
++ double getG()
++ double getB()
++ Color add(Color)
++ Color multiply(double)
++ Color schurProduct(Color)
++ boolean isBlack()
+}
+class main.java.object.Plane {
+- Point a
+- Point b
++ Point getA()
++ Point getB()
++ boolean intersect(Ray,Scene.Intersection)
++ double findIntersectionDistance(Point,Vector)
++ void settingFromFile(String)
+}
+class main.java.scene.SceneParser {
++ {static} Scene parseScene(String)
+}
+class main.java.scene.PointLight {
+- Point point
++ void loadPropertiesFromFile(String)
++ Point getPoint()
+}
+class main.java.scene.Light {
+- Color color
++ void setColor(Color)
++ Color getColor()
++ void loadPropertiesFromFile(String)
+}
+abstract class main.java.object.SceneObject {
+- Material material
++ {abstract}boolean intersect(Ray,Scene.Intersection)
++ Material getMaterial()
++ void setMaterial(Material)
++ {abstract}double findIntersectionDistance(Point,Vector)
+}
+class main.java.coordinate.Triplet {
+- double x
+- double y
+- double z
++ double getX()
++ double getY()
++ double getZ()
++ void setX(double)
++ void setY(double)
++ void setZ(double)
++ String toString()
++ boolean equals(Object)
++ Triplet addition(Triplet)
++ Triplet subtraction(Triplet)
++ Triplet mulplicationScalar(double)
++ double dotScalar(Triplet)
++ Triplet dotVectorial(Triplet)
++ Triplet dotSchur(Triplet)
++ double lenght()
++ Triplet normalisation()
+}
+class main.java.object.Triangle {
+- Point p1
+- Point p2
+- Point p3
+- Material material
++ boolean intersect(Ray,Scene.Intersection)
++ double findIntersectionDistance(Point,Vector)
++ void setP1(Point)
++ void setP2(Point)
++ void setP3(Point)
++ Point getP1()
++ Point getP2()
++ Point getP3()
++ void settingFromFile(String)
+}
+class main.java.coordinate.Point {
+- Triplet triplet
++ double getX()
++ double getY()
++ double getZ()
++ Vector subtract(Point)
++ Point multiply(double)
+}
+class main.java.coordinate.Vector {
+- Triplet triplet
++ double getX()
++ double getY()
++ double getZ()
++ Vector addition(Vector)
++ Vector subtraction(Vector)
++ Vector multiplicationScalar(double)
++ double dotScalar(Vector)
++ Vector dotVectorial(Vector)
++ Vector normalyze()
++ double lenght()
+}
+class main.java.scene.SceneBuilder {
+- Scene scene
++ SceneBuilder addLight(Color)
++ SceneBuilder addObject(SceneObject)
++ SceneBuilder setCamera(Camera)
++ Scene build()
++ {static} void main(String[])
+}
+class main.java.scene.Ray {
+- Point origin
+- Vector direction
++ Point getOrigin()
++ Vector getDirection()
++ Point pointAt(double)
+}
+class main.java.scene.DirectionalLight {
+- Vector direction
++ void loadPropertiesFromFile(String)
++ Vector getDirection()
+}
+class main.java.scene.RayTracer {
+- int imgWidth
+- int imgHeight
+- double fov
+- String outputFileName
+- BufferedImage image
+- Scene scene
++ void render()
++ void saveImage()
++ {static} void main(String[])
+}
+class main.java.scene.Camera {
+- Point position
+- Point lookAt
+- Vector up
+- double fov
++ void setPosition(Point)
++ void setLookAt(Point)
++ void setUp(Vector)
++ void setFov(double)
++ Point getPosition()
++ Point getLookAt()
++ Vector getUp()
++ void loadCameraSettingsFromFile(String)
+}
+class main.java.scene.Scene {
+- List<SceneObject> objects
+- List<Light> lights
+- Camera camera
+- int imgWidth
+- int imgHeight
++ List<SceneObject> getObjects()
++ List<Light> getLights()
++ void addObject(SceneObject)
++ void addLight(Light)
++ Camera getCamera()
++ void setCamera(Camera)
++ int getImageWidth()
++ int getImageHeight()
+}
+class main.java.scene.Scene$Intersection {
+- SceneObject object
+- Triplet point
+- Triplet normal
+- double distance
++ SceneObject getObject()
++ Triplet getPoint(Point)
++ Triplet getNormal()
++ double getDistance()
++ void setIntersectionDistance(double)
+}
+
+
+main.java.object.SceneObject <|-- main.java.object.Sphere
+main.java.object.SceneObject <|-- main.java.object.Plane
+main.java.scene.Light <|-- main.java.scene.PointLight
+main.java.object.SceneObject <|-- main.java.object.Triangle
+main.java.scene.Light <|-- main.java.scene.DirectionalLight
+main.java.scene.Scene +.. main.java.scene.Scene$Intersection
+@enduml

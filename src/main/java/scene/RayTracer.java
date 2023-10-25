@@ -8,6 +8,9 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+/**
+ * The RayTracer class is responsible for rendering a 3D scene to a 2D image using ray tracing.
+ */
 public class RayTracer {
     private int imgWidth; // Largeur de l'image en pixels
     private int imgHeight; // Hauteur de l'image en pixels
@@ -16,6 +19,15 @@ public class RayTracer {
     private BufferedImage image; // Image en cours de construction
     private Scene scene; // Scène à rendre
 
+    /**
+     * Constructs a new RayTracer with the specified image dimensions, field of view, output file name, and scene.
+     *
+     * @param imgWidth        The width of the image in pixels.
+     * @param imgHeight       The height of the image in pixels.
+     * @param fov             The field of view in degrees.
+     * @param outputFileName  The name of the output file.
+     * @param scene           The scene to render.
+     */
     public RayTracer(int imgWidth, int imgHeight, double fov, String outputFileName, Scene scene) {
         this.imgWidth = imgWidth;
         this.imgHeight = imgHeight;
@@ -25,6 +37,9 @@ public class RayTracer {
         this.scene = scene;
     }
 
+    /**
+     * Renders the scene using ray tracing and constructs the image.
+     */
     public void render() {
         double pixelWidth = 2.0 * Math.tan(Math.toRadians(fov / 2.0)) / imgWidth;
         double pixelHeight = 2.0 * Math.tan(Math.toRadians(fov / 2.0)) / imgHeight;
@@ -40,7 +55,9 @@ public class RayTracer {
         }
     }
 
-
+    /**
+     * Saves the constructed image to the specified output file.
+     */
     public void saveImage() {
         try {
             File outputfile = new File(outputFileName);
@@ -50,11 +67,16 @@ public class RayTracer {
         }
     }
 
+    /**
+     * The entry point of the program for rendering a scene with ray tracing.
+     *
+     * @param args Command-line arguments (not used).
+     */
     public static void main(String[] args) {
         int imgWidth = 800;
         int imgHeight = 600;
         double fov = 60;
-        String outputFileName = "output.png";
+        String outputFileName = "test.png";
 
         Scene scene = SceneParser.parseScene("scene.txt");
 
