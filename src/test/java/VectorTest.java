@@ -1,12 +1,17 @@
 package test.java;
 
-
 import main.java.coordinate.Vector;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
+/**
+ * This class contains unit tests for the methods of the Vector class.
+ */
 public class VectorTest {
 
+    /**
+     * Test the addition of two vectors.
+     */
     @Test
     public void testVectorAddition() {
         Vector vector1 = new Vector(1.0, 2.0, 3.0);
@@ -18,6 +23,9 @@ public class VectorTest {
         assertEquals(expected.getZ(), result.getZ(), 0.001);
     }
 
+    /**
+     * Test the subtraction of two vectors.
+     */
     @Test
     public void testVectorSubtraction() {
         Vector vector1 = new Vector(1.0, 2.0, 3.0);
@@ -29,6 +37,9 @@ public class VectorTest {
         assertEquals(expected.getZ(), result.getZ(), 0.001);
     }
 
+    /**
+     * Test the scalar multiplication of a vector.
+     */
     @Test
     public void testVectorScalarMultiplication() {
         Vector vector = new Vector(1.0, 2.0, 3.0);
@@ -40,6 +51,9 @@ public class VectorTest {
         assertEquals(expected.getZ(), result.getZ(), 0.001);
     }
 
+    /**
+     * Test the dot product of two vectors.
+     */
     @Test
     public void testVectorDotProduct() {
         Vector vector1 = new Vector(1.0, 2.0, 3.0);
@@ -49,6 +63,9 @@ public class VectorTest {
         assertEquals(expected, result, 0.001);
     }
 
+    /**
+     * Test the cross product of two vectors.
+     */
     @Test
     public void testVectorCrossProduct() {
         Vector vector1 = new Vector(1.0, 2.0, 3.0);
@@ -59,6 +76,4 @@ public class VectorTest {
         assertEquals(expected.getY(), result.getY(), 0.001);
         assertEquals(expected.getZ(), result.getZ(), 0.001);
     }
-
-
 }

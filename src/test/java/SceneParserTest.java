@@ -1,22 +1,26 @@
 package test.java;
 
-
 import main.java.scene.Scene;
 import main.java.scene.SceneParser;
 
+/**
+ * This class contains a test for the SceneParser that reads and parses a scene configuration file.
+ * It then prints some basic information about the parsed scene, including the number of objects, the camera,
+ * and the number of lights.
+ */
 public class SceneParserTest {
 
     public static void main(String[] args) {
-        String fileName = "scene.txt"; // Remplacez "scene.txt" par le nom de votre fichier de configuration
+        String fileName = "scene.txt"; // Replace "scene.txt" with the name of your configuration file
 
-        // Parse la scène à partir du fichier
+        // Parse the scene from the file
         Scene scene = SceneParser.parseScene(fileName);
 
-        // Affiche quelques informations sur la scène
-        System.out.println("Nombre d'objets dans la scène : " + scene.getObjects().size());
-        System.out.println("Camera de la scène : " + scene.getCamera());
-        System.out.println("Nombre de lumière: " + scene.getLights().size());
+        // Print some information about the scene
+        System.out.println("Number of objects in the scene: " + scene.getObjects().size());
+        System.out.println("Camera of the scene: " + scene.getCamera());
+        System.out.println("Number of lights: " + scene.getLights().size());
 
-        // Vous pouvez ajouter d'autres tests ici selon les besoins
+        // You can add additional tests here as needed
     }
 }

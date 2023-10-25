@@ -4,8 +4,14 @@ import main.java.scene.Color;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ * This class contains test cases for the Color class, which represents colors using RGB values.
+ */
 public class ColorTest {
 
+    /**
+     * Test color addition and verify that the resulting color is correct.
+     */
     @Test
     public void testColorAddition() {
         Color color1 = new Color(0.5, 0.6, 0.7);
@@ -17,6 +23,9 @@ public class ColorTest {
         assertEquals(expected.getB(), result.getB(), 0.001);
     }
 
+    /**
+     * Test color scalar multiplication and verify that the resulting color is correct.
+     */
     @Test
     public void testColorScalarMultiplication() {
         Color color = new Color(0.5, 0.6, 0.7);
@@ -28,6 +37,9 @@ public class ColorTest {
         assertEquals(expected.getB(), result.getB(), 0.001);
     }
 
+    /**
+     * Test Schur (element-wise) product of two colors and verify that the resulting color is correct.
+     */
     @Test
     public void testColorSchurProduct() {
         Color color1 = new Color(0.5, 0.6, 0.7);
@@ -38,5 +50,4 @@ public class ColorTest {
         assertEquals(expected.getG(), result.getG(), 0.001);
         assertEquals(expected.getB(), result.getB(), 0.001);
     }
-
 }
