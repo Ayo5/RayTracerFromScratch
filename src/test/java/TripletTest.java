@@ -1,6 +1,10 @@
 package test.java;
 
+<<<<<<< HEAD
 import sae301.Triplet;
+=======
+import main.java.coordinate.Triplet;
+>>>>>>> 4823f2e9ab7300190fceef1fbaf6b39831c73335
 import org.junit.Test;
 import static org.junit.Assert.*;
 

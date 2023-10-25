@@ -1,7 +1,12 @@
 package test.java;
 
+<<<<<<< HEAD
 import sae301.Point;
 import sae301.Sphere;
+=======
+import main.java.coordinate.Point;
+import main.java.object.Sphere;
+>>>>>>> 4823f2e9ab7300190fceef1fbaf6b39831c73335
 
 public class SphereTest {
     public static void main(String[] args) {

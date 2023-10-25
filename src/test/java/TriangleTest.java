@@ -1,11 +1,18 @@
 package test.java;
 
+<<<<<<< HEAD
 import sae301.Point;
 import sae301.Triangle;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+=======
+import main.java.coordinate.Point;
+import main.java.object.Triangle;
+import org.junit.jupiter.api.Test;
+
+>>>>>>> 4823f2e9ab7300190fceef1fbaf6b39831c73335
 class TriangleTest {
 
     @Test
