@@ -2,11 +2,9 @@ package main.java.math;
 
 public class Vector {
     private Triplet triplet;
-    private double norm;
 
     public Vector(double x, double y, double z) {
         this.triplet = new Triplet(x, y, z);
-        this.norm = triplet.length();
     }
 
     public double getX() {

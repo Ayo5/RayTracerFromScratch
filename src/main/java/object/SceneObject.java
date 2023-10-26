@@ -8,7 +8,7 @@ import main.java.math.Vector;
 public abstract class SceneObject {
     private Colors color;
 
-    public SceneObject(Colors color) {
+    protected SceneObject(Colors color) {
         this.color = color;
     }
 

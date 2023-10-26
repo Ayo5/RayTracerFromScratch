@@ -24,12 +24,6 @@ public class Triplet {
         return "(" + x + ", " + y + ", " + z + ")";
     }
 
-    public boolean equals(Object o) {
-        if (o instanceof Triplet t) {
-            return x == t.x && y == t.y && z == t.z;
-        }
-        return false;
-    }
 
     public Triplet addition(Triplet t2 ) {
         return new Triplet(this.x + t2.x, this.y + t2.y, this.z + t2.z);
