@@ -45,4 +45,22 @@ public class Sphere extends SceneObject {
         }
         return -1;
     }
+    @Override
+    public Point intersectOnP(Point lookFrom, Vector d) {
+        double t =this.intersect(lookFrom,d) ;
+        return new Point(d.multiplicationScalar(t).addition(new Vector(lookFrom.getX(),lookFrom.getY()
+                ,lookFrom.getZ())).getX(),
+                d.multiplicationScalar(t).addition(new Vector(lookFrom.getX(),lookFrom.getY()
+                        ,lookFrom.getZ())).getY(),d.multiplicationScalar(t).addition(new Vector(lookFrom.getX(),lookFrom.getY()
+                ,lookFrom.getZ())).getZ()) ;
+    }
+
+    @Override
+    public Vector createVectorN(Point lookFrom , Vector d) {
+        Point p = this.intersectOnP(lookFrom , d) ;
+        Vector nNotNormalize = p.subtract(center) ;
+        return nNotNormalize.normalize() ;
+
+    }
+
 }

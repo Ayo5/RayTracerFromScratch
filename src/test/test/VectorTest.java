@@ -1,5 +1,4 @@
-package test.java;
-
+package test;
 
 import main.java.math.Vector;
 import org.junit.Test;

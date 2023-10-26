@@ -1,0 +1,40 @@
+
+P
+java:S1141 "5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+P
+java:S11410"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+P
+java:S1141C"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+P
+java:S1141L"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+P
+java:S1141Y"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+P
+java:S1141h"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+P
+java:S1141w"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+Q
+java:S1141‚"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+Q
+java:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+O
+java:S1118":Add a private constructor to hide the implicit public one.(Ùä‰
+m
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 70 to the 15 allowed.(Ö¹´ˆüÿÿÿÿ
+Z
+java:S1659"?Declare "p2" and all following declarations on a separate line.(ì›œÓüÿÿÿÿ
+C
+java:S1481"-Remove this unused "maxverts" local variable.(ê¿åò
+E	java:S106&"+Replace this use of System.out by a logger.(ñÅÍœúÿÿÿÿ
+@	java:S106@"+Replace this use of System.out by a logger.(¡ØÒ«
+E	java:S106I"+Replace this use of System.out by a logger.(ØÌÔÿÿÿÿÿ
+E	java:S106V"+Replace this use of System.out by a logger.(¹º‚óûÿÿÿÿ
+E	java:S106c"+Replace this use of System.out by a logger.(¤êœÔşÿÿÿÿ
+@	java:S106t"+Replace this use of System.out by a logger.(€÷£ä
+E	java:S106|"+Replace this use of System.out by a logger.(š°Å¦øÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(„ãÓšøÿÿÿÿ
+F	java:S106Š"+Replace this use of System.out by a logger.(ç£óŒÿÿÿÿÿ
+F	java:S106—"+Replace this use of System.out by a logger.(‰İ³÷øÿÿÿÿ
+A	java:S106"+Replace this use of System.out by a logger.(Á¢‡ú
+â
+java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 140 to 64, Complexity from 21 to 14, Nesting Level from 6 to 2, Number of Variables from 67 to 6.(Ö¹´ˆüÿÿÿÿ

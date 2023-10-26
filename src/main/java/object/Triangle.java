@@ -51,4 +51,14 @@ public class Triangle extends SceneObject {
     public double intersect(Point lookFrom, Vector d) {
         return 0;
     }
+
+    @Override
+    public Point intersectOnP(Point lookFrom, Vector d) {
+        return null;
+    }
+
+    @Override
+    public Vector createVectorN(Point lookFrom, Vector d) {
+        return null;
+    }
 }

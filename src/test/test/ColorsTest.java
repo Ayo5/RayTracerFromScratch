@@ -1,11 +1,10 @@
-package test.java;
-
+package test;
 
 import main.java.light.Colors;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class ColorTest {
+public class ColorsTest {
 
     @Test
     public void testColorAddition() {

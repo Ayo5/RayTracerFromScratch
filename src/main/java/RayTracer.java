@@ -1,6 +1,8 @@
 package main.java;
 
 import main.java.light.Colors;
+import main.java.light.DirectionalLight;
+import main.java.light.Light;
 import main.java.math.Point;
 import main.java.math.Vector;
 import main.java.object.SceneObject;
@@ -21,7 +23,7 @@ public class RayTracer {
      */
     public static void main(String[] args) {
         if (args.length != 1) {
-            System.err.println("Usage: java RayTracer <scene_file>");
+            System.Logger.Level.ERROR.getName();
             System.exit(1);
         }
 
@@ -35,10 +37,10 @@ public class RayTracer {
         Point lookFrom = camera.getLookFrom();
         Point lookAt = camera.getLookAt();
 
-        Vector w_unNormalize = lookAt.subtract(lookFrom);
-        Vector w = w_unNormalize.normalize();
-        Vector u_unNormalize = w.dotVectorial(camera.getUp());
-        Vector u = u_unNormalize.normalize();
+        Vector wNotNormalize = lookAt.subtract(lookFrom);
+        Vector w = wNotNormalize.normalize();
+        Vector uNotNormalize = w.dotVectorial(camera.getUp());
+        Vector u = uNotNormalize.normalize();
         Vector v = w.dotVectorial(u).normalize();
 
         double fovr = Math.toRadians(camera.getFov());
@@ -51,6 +53,7 @@ public class RayTracer {
 
         for (int j = 0; j < imgHeight; j++) {
             for (int i = 0; i < imgWidth; i++) {
+
                 double a = (-realWidth / 2.0) + (i + 0.5) * pixelWidth;
                 double b = (realHeight / 2.0) - (j + 0.5) * pixelHeight;
                 Vector d = u.multiplicationScalar(a).addition(v.multiplicationScalar(b)).addition(w).normalize();
@@ -58,26 +61,49 @@ public class RayTracer {
                 Colors pixelColor = new Colors(0, 0, 0);
                 double closestIntersection = Double.POSITIVE_INFINITY;
 
-                for (SceneObject object : scene.getObjects()) {
-                    double t = object.intersect(lookFrom, d);
-                    if (t >= 0 && t < closestIntersection) {
-                        closestIntersection = t;
-                        pixelColor = object.getColor();
+                for (Light light : scene.getLights()) {
+                    if (light instanceof DirectionalLight directionalLight) {
+                        for (SceneObject object : scene.getObjects()) {
+                            double t = object.intersect(lookFrom, d);
+                        if (t >= 0 && t < closestIntersection) {
+                            closestIntersection = t;
+                            pixelColor = calculateColor(object, object.createVectorN(lookFrom, d),directionalLight );}
+                        }
                     }
                 }
-
-                image.setRGB(i, imgHeight - j - 1, pixelColor.toRGB());
-
-            }
+                image.setRGB(i, imgHeight - j - 1, pixelColor.toRGB());}
         }
-
         saveImage(image, scene.getOutputFileName());
     }
+
+    public static Colors calculateColor(SceneObject object, Vector normale, DirectionalLight light) {
+        double cosTheta = Math.max(0, normale.dotScalar(light.getDirection().normalize()));
+        if (cosTheta <= 0) {
+            return new Colors(0, 0, 0);}
+
+        Colors cdif = object.getColor();
+        Colors lightColor = light.getColor();
+
+        double red = cosTheta * lightColor.getR() * cdif.getR();
+        double green = cosTheta * lightColor.getG() * cdif.getG();
+        double blue = cosTheta * lightColor.getB() * cdif.getB();
+
+        red = Math.min(1.0, Math.max(0.0, red));
+        green = Math.min(1.0, Math.max(0.0, green));
+        blue = Math.min(1.0, Math.max(0.0, blue));
+
+
+        return new Colors(red, green, blue);
+    }
+
+
 
     public static void saveImage(BufferedImage image, String outputFileName) {
         try {
             File outputDir = new File("images");
-            outputDir.mkdirs(); // Crée le répertoire s'il n'existe pas encore
+            if(!outputDir.exists()){
+                outputDir.mkdirs();
+            }
             File outputfile = new File(outputDir, outputFileName);
             ImageIO.write(image, "png", outputfile);
         } catch (IOException e) {

@@ -14,8 +14,6 @@ public abstract class SceneObject {
 
     public abstract double intersect(Point lookFrom, Vector d);
 
-
-
     public Colors getColor() {
         return color;
     }
@@ -25,4 +23,7 @@ public abstract class SceneObject {
     }
 
 
+    public abstract Point intersectOnP(Point lookFrom, Vector d);
+
+    public abstract Vector createVectorN(Point lookFrom, Vector d);
 }

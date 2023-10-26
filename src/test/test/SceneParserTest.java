@@ -1,18 +1,16 @@
-package test.java;
-
+package test;
 
 import main.java.object.SceneObject;
 import main.java.scene.Scene;
 import main.java.scene.SceneParser;
 
-import java.io.IOException;
 
 public class SceneParserTest {
 
-    public static void main(String[] args) throws IOException {
-        String fileName = "sphere.txt"; // Remplacez "scene.txt" par le nom de votre fichier de configuration
+    public static void main(String[] args) {
+        String fileName = "sphere.txt";
 
-        // Parse la scène à partir du fichier
+
         Scene scene = SceneParser.parseScene(fileName);
         double camx= scene.getCamera().getLookFrom().getX() ;
         double camy= scene.getCamera().getLookFrom().getY() ;
