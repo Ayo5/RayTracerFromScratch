@@ -14,21 +14,15 @@ import java.io.File;
 import java.io.IOException;
 
 public class RayTracer {
-    private static final Scene scene = SceneParser.parseScene("sphere.txt");
-    private static final BufferedImage image =
-            new BufferedImage(scene.getImageWidth(), scene.getImageHeight(), BufferedImage.TYPE_INT_RGB);
-    public RayTracer() {}
-
-    public void saveImage() {
-        try {
-            File outputfile = new File(scene.getOutputFileName());
-            ImageIO.write(image, "png", outputfile);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static void main(String[] args) {
+        if (args.length != 1) {
+            System.err.println("Usage: java RayTracer <scene_file>");
+            System.exit(1);
+        }
+
+        String sceneFileName = args[0];
+        Scene scene = SceneParser.parseScene(sceneFileName);
+
         int imgWidth = scene.getImageWidth();
         int imgHeight = scene.getImageHeight();
 
@@ -47,6 +41,8 @@ public class RayTracer {
         double pixelHeight = realHeight / imgHeight;
         double realWidth = pixelHeight * imgWidth;
         double pixelWidth = realWidth / imgWidth;
+
+        BufferedImage image = new BufferedImage(imgWidth, imgHeight, BufferedImage.TYPE_INT_RGB);
 
         for (int i = 0; i < imgWidth; i++) {
             for (int j = 0; j < imgHeight; j++) {
@@ -69,8 +65,17 @@ public class RayTracer {
             }
         }
 
-        RayTracer rayTracer = new RayTracer();
-        rayTracer.saveImage();
+        saveImage(image, scene.getOutputFileName());
     }
 
+    public static void saveImage(BufferedImage image, String outputFileName) {
+        try {
+            File outputDir = new File("images");
+            outputDir.mkdirs(); // Crée le répertoire s'il n'existe pas encore
+            File outputfile = new File(outputDir, outputFileName);
+            ImageIO.write(image, "png", outputfile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
