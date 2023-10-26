@@ -1,7 +1,6 @@
 package main.java.scene;
 
-import main.java.math.Point;
-import main.java.math.Triplet;
+import main.java.light.Light;
 import main.java.object.SceneObject;
 
 import java.util.ArrayList;
@@ -13,6 +12,15 @@ public class Scene {
     private Camera camera;
     private int imgWidth;
     private int imgHeight;
+    private String outputFileName;
+
+    public String getOutputFileName() {
+        return outputFileName;
+    }
+
+    public void setOutputFileName(String outputFileName) {
+        this.outputFileName = outputFileName;
+    }
 
     public List<SceneObject> getObjects() {
         return objects;
@@ -20,6 +28,14 @@ public class Scene {
 
     public List<Light> getLights() {
         return lights;
+    }
+
+    public void setImgWidth(int imgWidth) {
+        this.imgWidth = imgWidth;
+    }
+
+    public void setImgHeight(int imgHeight) {
+        this.imgHeight = imgHeight;
     }
 
     public Scene(int imgWidth, int imgHeight) {
@@ -53,39 +69,4 @@ public class Scene {
         return imgHeight;
     }
 
-
-    public static class Intersection {
-        private SceneObject object; // L'objet avec lequel le rayon interagit
-        private Triplet point; // Point d'intersection en coordonnées mondiales
-        private Triplet normal; // Normale à la surface d'intersection
-        private double distance; // Distance du point de départ du rayon à l'intersection
-
-        public Intersection(SceneObject object, Triplet point, Triplet normal, double distance) {
-            this.object = object;
-            this.point = point;
-            this.normal = normal;
-            this.distance = distance;
-        }
-
-        public SceneObject getObject() {
-            return object;
-        }
-
-        public Triplet getPoint(Point intersectionPoint) {
-            return point;
-        }
-
-        public Triplet getNormal() {
-            return normal;
-        }
-
-        public double getDistance() {
-            return distance;
-        }
-
-
-        public void setIntersectionDistance(double distance) {
-            this.distance = distance;
-        }
-    }
 }

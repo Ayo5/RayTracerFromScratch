@@ -1,24 +1,26 @@
 package main.java.object;
 
+import main.java.light.Colors;
 import main.java.math.Point;
 import main.java.math.Vector;
-import main.java.scene.Color;
-import main.java.scene.Ray;
+
 
 public abstract class SceneObject {
-    private Color color;
+    private Colors color;
 
-    public SceneObject(Color color) {
-        this.color = null;
+    public SceneObject(Colors color) {
+        this.color = color;
     }
 
-    public abstract Vector intersect(Ray ray);
+    public abstract double intersect(Point lookFrom, Vector d);
 
-    public Color getColor() {
+
+
+    public Colors getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(Colors color) {
         this.color = color;
     }
 

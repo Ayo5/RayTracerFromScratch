@@ -1,21 +1,23 @@
+package main.java.light;
 
-package main.java.scene;
-import main.java.scene.Color;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Light {
-    private Color color;
+    private Colors color;
 
-    public Light(Color color) {
+    public Light(Colors color) {
         this.color = color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(Colors color) {
         this.color = color;
     }
 
-    public Color getColor() {
+    public Colors getColor() {
         return color;
     }
 
@@ -35,7 +37,7 @@ public class Light {
                                 double r = Double.parseDouble(words[1]);
                                 double g = Double.parseDouble(words[2]);
                                 double b = Double.parseDouble(words[3]);
-                                color = new Color(r, g, b);
+                                color = new Colors(r, g, b);
                             } catch (NumberFormatException e) {
                                 System.out.println("Format de nombre invalide dans la ligne 'color'.");
                             }
@@ -46,7 +48,7 @@ public class Light {
                 }
             }
 
-            fr.close();
+            br.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,12 +1,9 @@
 
-package main.java.scene;
-
-import main.java.math.Point;
-import main.java.math.Vector;
+package main.java.math;
 
 public class Ray {
-    private Point origin; // Origine du rayon
-    private Vector direction; // Direction du rayon
+    private Point origin;
+    private Vector direction;
 
     public Ray(Point origin, Vector direction) {
         this.origin = origin;

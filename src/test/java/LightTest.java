@@ -1,12 +1,13 @@
 package test.java;
 
 
-import main.java.scene.Light;
-import main.java.scene.Color;
+import main.java.light.Colors;
+import main.java.light.DirectionalLight;
+import main.java.light.Light;
+import main.java.light.PointLight;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import main.java.scene.DirectionalLight;
-import main.java.scene.PointLight;
+
 import main.java.math.Point;
 import main.java.math.Vector;
 
@@ -16,9 +17,9 @@ public class LightTest {
 
     @Test
     public void testDirectionalLight() {
-        Color color = new Color(1.0, 1.0, 1.0);
+        Colors color = new Colors(1.0, 1.0, 1.0);
         Vector direction = new Vector(1.0, 0.0, 0.0);
-        DirectionalLight light = new DirectionalLight(color, direction);
+        DirectionalLight light = new DirectionalLight(direction,color);
 
         assertEquals(color, light.getColor());
         assertEquals(direction, light.getDirection());
@@ -26,10 +27,10 @@ public class LightTest {
 
     @Test
     public void testPointLight() {
-        Color color = new Color(1.0, 0.0, 0.0);
+        Colors color = new Colors(1.0, 0.0, 0.0);
         Point position = new Point(2.0, 3.0, 4.0);
         double intensity = 100.0;
-        PointLight light = new PointLight(color, position);
+        PointLight light = new PointLight(position,color);
 
         assertEquals(color, light.getColor());
         assertEquals(position, light.getPoint());
@@ -38,7 +39,7 @@ public class LightTest {
 
     @Test
     public void testLoadPropertiesFromFile() {
-        Light light = new Light(new Color(1.0, 1.0, 1.0));
+        Light light = new Light(new Colors(1.0, 1.0, 1.0));
 
         light.loadPropertiesFromFile("src/main/ressource/objet.txt");
 
