@@ -14,6 +14,11 @@ import java.io.File;
 import java.io.IOException;
 
 public class RayTracer {
+    /***
+     *
+     * To compil the program :  javac -cp src -d out src/main/java/RayTracer.java
+     * To start the program : java -cp out main.java.RayTracer <scene_file>.txt
+     */
     public static void main(String[] args) {
         if (args.length != 1) {
             System.err.println("Usage: java RayTracer <scene_file>");
