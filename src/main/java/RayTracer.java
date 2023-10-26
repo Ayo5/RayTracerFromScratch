@@ -44,8 +44,8 @@ public class RayTracer {
 
         BufferedImage image = new BufferedImage(imgWidth, imgHeight, BufferedImage.TYPE_INT_RGB);
 
-        for (int i = 0; i < imgWidth; i++) {
-            for (int j = 0; j < imgHeight; j++) {
+        for (int j = 0; j < imgHeight; j++) {
+            for (int i = 0; i < imgWidth; i++) {
                 double a = (-realWidth / 2.0) + (i + 0.5) * pixelWidth;
                 double b = (realHeight / 2.0) - (j + 0.5) * pixelHeight;
                 Vector d = u.multiplicationScalar(a).addition(v.multiplicationScalar(b)).addition(w).normalize();
@@ -61,7 +61,8 @@ public class RayTracer {
                     }
                 }
 
-                image.setRGB(i, j, pixelColor.toRGB());
+                image.setRGB(i, imgHeight - j - 1, pixelColor.toRGB());
+
             }
         }
 
