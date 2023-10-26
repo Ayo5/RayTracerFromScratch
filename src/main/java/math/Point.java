@@ -19,7 +19,6 @@ public class Point {
     public double getZ() {
         return triplet.getZ();
     }
-
     public Vector subtract(Point point) {
         return new Vector(triplet.getX() - point.getX(), triplet.getY() - point.getY(), triplet.getZ() - point.getZ());
     }

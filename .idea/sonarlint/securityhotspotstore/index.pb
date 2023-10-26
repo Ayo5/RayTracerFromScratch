@@ -21,16 +21,8 @@ Y
 )src/main/java/light/DirectionalLight.java,1\4\141889de686713ea0fed3be93af087ccea032a11
 O
 src/main/java/light/Colors.java,b\6\b6f8cf80ddcde190815dc903a01de1ee667de66d
-L
-src/test/java/ColorTest.java,0\e\0e48d02290c1fbb0eeb039e328e59a0854522ee2
-L
-src/test/java/PointTest.java,0\7\07aae49e399c77d174c998b691953bec6a8e8f6b
-M
-src/test/java/VectorTest.java,3\a\3ad46de157d1aa889935bf72a27626d8d6c89335
 O
 src/main/java/math/Triplet.java,2\e\2e5bd997f8bbd8d09f6e007922a92a1cd2c68ef2
-R
-"src/test/java/SceneParserTest.java,7\b\7b7694fd503d1a6d36181a737506c122da45aff9
 N
 src/main/java/light/Light.java,3\8\38dd4e8927035ef62bdc5cac7d8c72f90edda9cb
 T
