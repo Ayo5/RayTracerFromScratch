@@ -120,4 +120,4 @@ Finally, we have the [scene package](src/main/java/scene/), which contains the c
 
 # 6. Wiki
 
-If you want some details about our project and more precisely about programms, you can go on our [Wiki](https://gitlab.univ-artois.fr/abdelkader_dai/sae_s3_2023-204/-/wikis/home)
+If you want some details about our project and more precisely about programms, you can go on our [Wiki](https://gitlab.univ-artois.fr/abdelkader_dai/sae_s3_2023-204/-/wikis/RayTracing-home)
