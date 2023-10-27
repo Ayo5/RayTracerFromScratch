@@ -1,12 +1,20 @@
-package test;
+package test.test;
 
 import main.java.object.SceneObject;
 import main.java.scene.Scene;
 import main.java.scene.SceneParser;
 
 
+/**
+ * The type Scene parser test.
+ */
 public class SceneParserTest {
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         String fileName = "sphere.txt";
 

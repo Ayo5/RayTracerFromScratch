@@ -4,8 +4,14 @@ import main.java.math.Vector;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
+/**
+ * The type Vector test.
+ */
 public class VectorTest {
 
+    /**
+     * Test vector addition.
+     */
     @Test
     public void testVectorAddition() {
         Vector vector1 = new Vector(1.0, 2.0, 3.0);
@@ -17,6 +23,9 @@ public class VectorTest {
         assertEquals(expected.getZ(), result.getZ(), 0.001);
     }
 
+    /**
+     * Test vector subtraction.
+     */
     @Test
     public void testVectorSubtraction() {
         Vector vector1 = new Vector(1.0, 2.0, 3.0);
@@ -28,6 +37,9 @@ public class VectorTest {
         assertEquals(expected.getZ(), result.getZ(), 0.001);
     }
 
+    /**
+     * Test vector scalar multiplication.
+     */
     @Test
     public void testVectorScalarMultiplication() {
         Vector vector = new Vector(1.0, 2.0, 3.0);
@@ -39,6 +51,9 @@ public class VectorTest {
         assertEquals(expected.getZ(), result.getZ(), 0.001);
     }
 
+    /**
+     * Test vector dot product.
+     */
     @Test
     public void testVectorDotProduct() {
         Vector vector1 = new Vector(1.0, 2.0, 3.0);
@@ -48,6 +63,9 @@ public class VectorTest {
         assertEquals(expected, result, 0.001);
     }
 
+    /**
+     * Test vector cross product.
+     */
     @Test
     public void testVectorCrossProduct() {
         Vector vector1 = new Vector(1.0, 2.0, 3.0);

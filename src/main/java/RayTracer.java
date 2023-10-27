@@ -15,11 +15,15 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * The type Ray tracer.
+ */
 public class RayTracer {
     /***
      *
      * To compil the program :  javac -cp src -d out src/main/java/RayTracer.java
      * To start the program : java -cp out main.java.RayTracer <scene_file>.txt
+     * @param args the input arguments
      */
     public static void main(String[] args) {
         if (args.length != 1) {
@@ -76,6 +80,14 @@ public class RayTracer {
         saveImage(image, scene.getOutputFileName());
     }
 
+    /**
+     * Calculate color colors.
+     *
+     * @param object  the object
+     * @param normale the normale
+     * @param light   the light
+     * @return the colors
+     */
     public static Colors calculateColor(SceneObject object, Vector normale, DirectionalLight light) {
         double cosTheta = Math.max(0, normale.dotScalar(light.getDirection().normalize()));
         if (cosTheta <= 0) {
@@ -97,7 +109,12 @@ public class RayTracer {
     }
 
 
-
+    /**
+     * Save image.
+     *
+     * @param image          the image
+     * @param outputFileName the output file name
+     */
     public static void saveImage(BufferedImage image, String outputFileName) {
         try {
             File outputDir = new File("images");

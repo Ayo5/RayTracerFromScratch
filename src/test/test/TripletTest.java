@@ -4,8 +4,14 @@ import main.java.math.Triplet;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * The type Triplet test.
+ */
 public class TripletTest {
 
+    /**
+     * Test addition.
+     */
     @Test
     public void testAddition() {
         Triplet t1 = new Triplet(1, 2, 3);
@@ -14,6 +20,9 @@ public class TripletTest {
         assertEquals(new Triplet(5, 7, 9), result);
     }
 
+    /**
+     * Test subtraction.
+     */
     @Test
     public void testSubtraction() {
         Triplet t1 = new Triplet(4, 5, 6);
@@ -22,6 +31,9 @@ public class TripletTest {
         assertEquals(new Triplet(3, 3, 3), result);
     }
 
+    /**
+     * Test dot scalar.
+     */
     @Test
     public void testDotScalar() {
         Triplet t1 = new Triplet(1, 2, 3);
@@ -30,6 +42,9 @@ public class TripletTest {
         assertEquals(32, result);
     }
 
+    /**
+     * Test multiply scalar.
+     */
     @Test
     public void testMultiplyScalar() {
         Triplet t1 = new Triplet(1, 2, 3);
@@ -38,6 +53,9 @@ public class TripletTest {
         assertEquals(new Triplet(-3, 6, -3), result);
     }
 
+    /**
+     * Test dot schur.
+     */
     @Test
     public void testDotSchur() {
         Triplet t1 = new Triplet(1, 2, 3);
@@ -46,6 +64,9 @@ public class TripletTest {
         assertEquals(new Triplet(4, 10, 18), result);
     }
 
+    /**
+     * Test length.
+     */
     @Test
     public void testLength() {
         Triplet t = new Triplet(3, 4, 5);
@@ -53,6 +74,9 @@ public class TripletTest {
         assertEquals(7.0710678118654755, length, 0.0001);
     }
 
+    /**
+     * Test normalize.
+     */
     @Test
     public void testNormalize() {
         Triplet t = new Triplet(3, 4, 5);
@@ -60,6 +84,9 @@ public class TripletTest {
         assertEquals(new Triplet(0.4242640687119285, 0.565685424949238, 0.7071067811865475), normalized);
     }
 
+    /**
+     * Test distance.
+     */
     @Test
     public void testDistance() {
         Triplet a = new Triplet(1, 2, 3);

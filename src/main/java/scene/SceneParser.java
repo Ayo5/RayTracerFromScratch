@@ -15,8 +15,17 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * The type Scene parser.
+ */
 public class SceneParser {
 
+    /**
+     * Parse scene scene.
+     *
+     * @param fileName the file name
+     * @return the scene
+     */
     public static Scene parseScene(String fileName) {
         Scene scene = new Scene(0, 0); // Default size
         try (BufferedReader br = new BufferedReader(new FileReader(new File("src/main/ressource/" + fileName)))) {

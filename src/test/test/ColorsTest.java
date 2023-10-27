@@ -4,8 +4,14 @@ import main.java.light.Colors;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ * The type Colors test.
+ */
 public class ColorsTest {
 
+    /**
+     * Test color addition.
+     */
     @Test
     public void testColorAddition() {
         Colors color1 = new Colors(0.5, 0.6, 0.7);
@@ -17,6 +23,9 @@ public class ColorsTest {
         assertEquals(expected.getB(), result.getB(), 0.001);
     }
 
+    /**
+     * Test color scalar multiplication.
+     */
     @Test
     public void testColorScalarMultiplication() {
         Colors color = new Colors(0.5, 0.6, 0.7);
@@ -28,6 +37,9 @@ public class ColorsTest {
         assertEquals(expected.getB(), result.getB(), 0.001);
     }
 
+    /**
+     * Test color schur product.
+     */
     @Test
     public void testColorSchurProduct() {
         Colors color1 = new Colors(0.5, 0.6, 0.7);

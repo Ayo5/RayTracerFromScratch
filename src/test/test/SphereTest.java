@@ -9,8 +9,14 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+/**
+ * The type Sphere test.
+ */
 public class SphereTest {
 
+    /**
+     * Test constructor and getters.
+     */
     @Test
     public void testConstructorAndGetters() {
         Point center = new Point(1, 2, 3);
@@ -23,6 +29,9 @@ public class SphereTest {
         assertEquals(color, sphere.getColor());
     }
 
+    /**
+     * Test intersect.
+     */
     @Test
     public void testIntersect() {
         Point center = new Point(0, 0, 0);
@@ -49,6 +58,9 @@ public class SphereTest {
         assertEquals(-1.0, t, 0.0001);
     }
 
+    /**
+     * Test intersect on p.
+     */
     @Test
     public void testIntersectOnP() {
         Point center = new Point(0, 0, 0);
@@ -75,6 +87,9 @@ public class SphereTest {
         assertNull(intersectionPoint);
     }
 
+    /**
+     * Test create vector n.
+     */
     @Test
     public void testCreateVectorN() {
         Point center = new Point(0, 0, 0);

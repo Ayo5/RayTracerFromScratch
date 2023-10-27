@@ -4,21 +4,41 @@ import main.java.light.Colors;
 import main.java.math.Point;
 import main.java.math.Vector;
 
+/**
+ * The type Sphere.
+ */
 public class Sphere extends SceneObject {
 
     private final Point center;
     private final double radius;
 
+    /**
+     * Instantiates a new Sphere.
+     *
+     * @param center the center
+     * @param radius the radius
+     * @param color  the color
+     */
     public Sphere(Point center, double radius, Colors color) {
         super(color);
         this.center = center;
         this.radius = radius;
     }
 
+    /**
+     * Gets center.
+     *
+     * @return the center
+     */
     public Point getCenter() {
         return center;
     }
 
+    /**
+     * Gets radius.
+     *
+     * @return the radius
+     */
     public double getRadius() {
         return radius;
     }
