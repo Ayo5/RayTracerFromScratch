@@ -5,10 +5,16 @@ import main.java.light.DirectionalLight;
 import main.java.math.Vector;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
+/**
+ * The type Directional light test.
+ */
 public class DirectionalLightTest {
 
+    /**
+     * Test constructor and getters.
+     */
     @Test
     public void testConstructorAndGetters() {
         Vector direction = new Vector(1, 0, 0);
@@ -20,6 +26,9 @@ public class DirectionalLightTest {
         assertEquals(color, directionalLight.getColor());
     }
 
+    /**
+     * Test set direction.
+     */
     @Test
     public void testSetDirection() {
         Vector initialDirection = new Vector(1, 0, 0);

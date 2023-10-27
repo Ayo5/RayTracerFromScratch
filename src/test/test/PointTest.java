@@ -2,11 +2,20 @@ package test;
 
 import main.java.math.Point;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.Assert.*;
 import main.java.math.Vector;
+import org.junit.*;
 
+import static org.junit.Assert.assertEquals;
+
+/**
+ * The type Point test.
+ */
 public class PointTest {
 
+    /**
+     * Test point subtraction.
+     */
     @Test
     public void testPointSubtraction() {
         Point point1 = new Point(1.0, 2.0, 3.0);
@@ -18,6 +27,9 @@ public class PointTest {
         assertEquals(expected.getZ(), result.getZ(), 0.001);
     }
 
+    /**
+     * Test point scalar multiplication.
+     */
     @Test
     public void testPointScalarMultiplication() {
         Point point = new Point(1.0, 2.0, 3.0);
